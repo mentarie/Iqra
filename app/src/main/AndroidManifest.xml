@@ -12,7 +12,11 @@
         android:roundIcon="@drawable/logo_iqra"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".ToolbarTesBaca"></activity>
+        <activity android:name=".ToolbarLatihan" />
+        <activity android:name=".ToolbarPengantar" />
+        <activity android:name=".ToolbarHome" />
+        <activity android:name=".HomeActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".home"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".home" />
     </application>
 
 </manifest>
