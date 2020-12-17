@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Pengantar1Activity extends AppCompatActivity {
@@ -18,7 +19,7 @@ public class Pengantar1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pengantar1);
 
-        textPengantar1 = (TextView) findViewById(R.id.textPengantar1);
+        textPengantar1 = (TextView) findViewById(R.id.textToolbar);
         textPengantar1.setText("Pengantar Jilid 1");
 
         button_back = findViewById(R.id.button_back);
@@ -27,6 +28,14 @@ public class Pengantar1Activity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),HomeActivity.class));
                 finish();
+            }
+        });
+
+        ImageView latihan_jilid1 = findViewById(R.id.button_latihan);
+        latihan_jilid1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent jilid1 = new Intent(Pengantar1Activity.this, LatihanBacaActivity.class);
+                startActivity(jilid1);
             }
         });
     }

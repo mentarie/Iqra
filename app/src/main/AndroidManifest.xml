@@ -12,10 +12,11 @@
         android:roundIcon="@drawable/logo_iqra"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Pengantar1Activity"></activity>
+        <activity android:name=".LatihanBacaActivity"></activity>
+        <activity android:name=".Pengantar1Activity" />
         <activity android:name=".ToolbarTesBaca" />
         <activity android:name=".ToolbarLatihan" />
-        <activity android:name=".ToolbarPengantar" />
+        <activity android:name=".ToolbarRegular" />
         <activity android:name=".ToolbarHome" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".SplashScreenActivity">
