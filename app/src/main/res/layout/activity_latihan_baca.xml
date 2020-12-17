@@ -22,14 +22,14 @@
 
                 <TextView
                     android:layout_width="144dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:background="@drawable/button_bg_rounded_theme"
-                    android:padding="12dp"
+                    android:gravity="center"
                     android:layout_gravity="center"
                     android:text="Jilid 1"
                     android:textAlignment="center"
                     android:textColor="#fff"
-                    android:textSize="14sp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
                 <TextView
                     android:layout_width="match_parent"
@@ -44,8 +44,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginRight="14dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
                     android:orientation="horizontal"
                     android:background="@drawable/button_bg_rounded_corners">
                     <ImageView
@@ -230,8 +230,8 @@
                         android:layout_height="50dp"
                         android:layout_weight="1"
                         android:padding="4dp"
-                        android:layout_marginBottom="12dp"
                         android:layout_marginLeft="12dp"
+                        android:layout_marginRight="12dp"
                         android:src="@drawable/jilid1_hal1_13"
                         android:background="@drawable/button_bg_rounded_corners"/>
                     <ImageView
@@ -240,8 +240,6 @@
                         android:layout_height="50dp"
                         android:layout_weight="1"
                         android:padding="4dp"
-                        android:layout_marginBottom="12dp"
-                        android:layout_marginLeft="12dp"
                         android:layout_marginRight="12dp"
                         android:src="@drawable/jilid1_hal1_13"
                         android:background="@drawable/button_bg_rounded_corners"/>
@@ -251,8 +249,6 @@
                         android:layout_height="50dp"
                         android:layout_weight="1"
                         android:padding="4dp"
-                        android:layout_marginBottom="12dp"
-                        android:layout_marginLeft="12dp"
                         android:layout_marginRight="12dp"
                         android:src="@drawable/jilid1_hal1_13"
                         android:background="@drawable/button_bg_rounded_corners"/>

@@ -29,11 +29,13 @@
     </LinearLayout>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/button_bg_rounded_menu">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
             <LinearLayout
                 android:id="@+id/card_jilid1"
                 android:layout_width="match_parent"
@@ -82,7 +84,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:src="@drawable/jilid2"
-                    android:padding="10dp"/>
+                    android:padding="6dp"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -96,7 +98,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Pengenalan huruf hijaiyah berharakat fathah"/>
+                        android:text="Perkenalan dengan bunyi huruf-huruf bersambung berharokat fathah"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -128,7 +130,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Pengenalan huruf hijaiyah berharakat fathah"/>
+                        android:text="Perkenalan bacaan kasroh, sukun, dan dhommah"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -146,7 +148,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:src="@drawable/jilid4"
-                    android:padding="5dp"/>
+                    android:padding="10dp"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -160,7 +162,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Pengenalan huruf hijaiyah berharakat fathah"/>
+                        android:text="Pengenalan bacaan fathah tanwin, kasroh tanwin, dhommah tanwin"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -178,7 +180,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:src="@drawable/jilid5"
-                    android:padding="4dp"/>
+                    android:padding="10dp"/>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -192,7 +194,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Pengenalan huruf hijaiyah berharakat fathah"/>
+                        android:text="Pengenalan cara membaca alif-lam qomariah, waqof, mad far’i, idghom, dan alifla"/>
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -224,7 +226,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Pengenalan huruf hijaiyah berharakat fathah"/>
+                        android:text="Memuat semua persoalan-persoalan tajwid"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
