@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/toolbar_pengantar"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    tools:context=".ToolbarPengantar">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/toolbarPrimary"
+        android:orientation="horizontal"
+        android:elevation="16dp"
+        android:layout_marginBottom="24dp"
+        >
+        <ImageView
+            android:id="@+id/button_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="12dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_baseline_arrow_back" />
+        <TextView
+            android:id="@+id/textPengantar1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="11"
+            android:text=""
+            android:layout_marginRight="12dp"
+            android:textAlignment="center"
+            android:layout_gravity="center_vertical"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat" />
+    </LinearLayout>
+</LinearLayout>
