@@ -13,11 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="190dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="12dp"
             android:src="@drawable/illustrasi_home"/>
         <ImageView
@@ -38,7 +39,7 @@
                 android:id="@+id/card_jilid1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/cardpilihJilid"
+                android:background="@drawable/button_bg_rounded_corners"
                 android:padding="12dp"
                 android:elevation="3dp"
                 android:layout_marginLeft="18dp"
@@ -71,12 +72,12 @@
                 android:id="@+id/card_jilid2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/cardpilihJilid"
                 android:padding="12dp"
                 android:elevation="3dp"
                 android:layout_marginLeft="18dp"
                 android:layout_marginRight="18dp"
-                android:layout_marginBottom="12dp">
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/button_bg_rounded_corners">
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -103,7 +104,7 @@
                 android:id="@+id/card_jilid3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/cardpilihJilid"
+                android:background="@drawable/button_bg_rounded_corners"
                 android:padding="12dp"
                 android:elevation="3dp"
                 android:layout_marginLeft="18dp"
@@ -135,7 +136,7 @@
                 android:id="@+id/card_jilid4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/cardpilihJilid"
+                android:background="@drawable/button_bg_rounded_corners"
                 android:padding="12dp"
                 android:elevation="3dp"
                 android:layout_marginLeft="18dp"
@@ -167,7 +168,7 @@
                 android:id="@+id/card_jilid5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/cardpilihJilid"
+                android:background="@drawable/button_bg_rounded_corners"
                 android:padding="12dp"
                 android:elevation="3dp"
                 android:layout_marginLeft="18dp"
@@ -199,7 +200,7 @@
                 android:id="@+id/card_jilid6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/cardpilihJilid"
+                android:background="@drawable/button_bg_rounded_corners"
                 android:padding="12dp"
                 android:elevation="3dp"
                 android:layout_marginLeft="18dp"
