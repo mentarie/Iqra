@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_editname"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EditNameActivity">
+    <include
+        layout="@layout/activity_toolbar_editor"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            >
+            <EditText
+                android:id="@+id/editNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="11"
+                android:hint="Nama"
+                android:layout_gravity="center_vertical"
+                android:textSize="14dp"
+                android:layout_marginBottom="8dp"
+                tools:ignore="RtlCompat"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textSize="12sp"
+                android:text="Anda dapat menggunakan nama panggilan bahkan nama lengkap. Nama yang tersimpan akan muncul dalam halaman profil."/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

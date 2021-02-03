@@ -216,38 +216,41 @@
                 android:orientation="vertical"
                 android:background="@color/colorWhite">
                 <!--Pengingat-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="24dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/ic_baseline_access_alarm"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="11"
-                            android:text="Pengingat Baca Iqra"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginLeft="12dp"
-                            android:textSize="14dp"
-                            tools:ignore="RtlCompat"
-                            />
-                    </LinearLayout>
-                </LinearLayout>
-                <View
-                    android:layout_width="fill_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="24dp"
-                    android:background="@color/colorLines"/>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:layout_marginTop="24dp"-->
+<!--                    android:layout_marginLeft="24dp"-->
+<!--                    android:layout_marginRight="24dp">-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="horizontal">-->
+<!--                        <ImageView-->
+<!--                            android:layout_width="24dp"-->
+<!--                            android:layout_height="24dp"-->
+<!--                            android:src="@drawable/ic_baseline_access_alarm"/>-->
+<!--                        <TextView-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_weight="8"-->
+<!--                            android:text="Pengingat Baca Iqra"-->
+<!--                            android:layout_gravity="center_vertical"-->
+<!--                            android:layout_marginLeft="12dp"-->
+<!--                            android:textSize="14dp"-->
+<!--                            tools:ignore="RtlCompat"-->
+<!--                            />-->
+<!--                        <Switch-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"/>-->
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+<!--                <View-->
+<!--                    android:layout_width="fill_parent"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    android:layout_marginTop="24dp"-->
+<!--                    android:background="@color/colorLines"/>-->
                 <!--Histori-->
                 <LinearLayout
                     android:id="@+id/button_history"

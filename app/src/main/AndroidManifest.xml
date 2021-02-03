@@ -12,6 +12,10 @@
         android:roundIcon="@drawable/logo_iqra"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".EditEmailActivity"></activity>
+        <activity android:name=".EditPasswordActivity" />
+        <activity android:name=".ToolbarEditor" />
+        <activity android:name=".EditNameActivity" />
         <activity android:name=".ToolbarProfile" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".SignInActivity" />
