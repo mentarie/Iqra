@@ -27,208 +27,347 @@
             android:layout_marginBottom="14dp"
             android:src="@drawable/teks_pilih_jilid"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:background="@drawable/button_bg_rounded_menu"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/button_bg_rounded_menu">
+        android:background="@color/colorPrimaryMenu">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
-            <LinearLayout
-                android:id="@+id/card_jilid1"
+            android:orientation="vertical">
+            <!--Jilid 1-->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginBottom="14dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/card_jilid1"
+                    android:layout_width="360dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/button_bg_rounded_corners"
+                    android:padding="12dp">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:padding="4dp"
+                        android:src="@drawable/jilid1" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Jilid 1"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="12dp"
+                            android:text="Pengenalan huruf hijaiyah berharakat fathah" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/button_bg_rounded_theme"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:layout_marginLeft="12dp"
+                        android:textColor="@color/toolbarPrimary"
+                        android:layout_gravity="center_vertical"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!--Jilid 2-->
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_bg_rounded_corners"
-                android:padding="12dp"
-                android:elevation="3dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginBottom="12dp">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:src="@drawable/jilid1"
-                    android:padding="8dp"/>
+                android:layout_marginBottom="14dp"
+                android:orientation="horizontal">
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
-                    <TextView
+                    android:id="@+id/card_jilid2"
+                    android:layout_width="360dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/button_bg_rounded_corners"
+                    android:padding="6dp">
+                    <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Jilid 1"
-                        android:textStyle="bold"/>
-                    <TextView
+                        android:layout_weight="2"
+                        android:padding="12dp"
+                        android:src="@drawable/jilid2" />
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Pengenalan huruf hijaiyah berharakat fathah"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Jilid 2"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="8dp"
+                            android:text="Perkenalan dengan bunyi huruf bersambung berharokat fathah" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/card_jilid2"
+                <LinearLayout
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/button_bg_rounded_theme"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2"
+                        android:layout_marginLeft="12dp"
+                        android:textColor="@color/toolbarPrimary"
+                        android:layout_gravity="center_vertical"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!--Jilid 3-->
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
-                android:elevation="3dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/button_bg_rounded_corners">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:src="@drawable/jilid2"
-                    android:padding="6dp"/>
+                android:layout_marginBottom="14dp"
+                android:orientation="horizontal">
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
-                    <TextView
+                    android:id="@+id/card_jilid3"
+                    android:layout_width="360dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/button_bg_rounded_corners"
+                    android:padding="6dp">
+                    <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Jilid 2"
-                        android:textStyle="bold"/>
-                    <TextView
+                        android:layout_weight="2"
+                        android:padding="12dp"
+                        android:src="@drawable/jilid3" />
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Perkenalan dengan bunyi huruf-huruf bersambung berharokat fathah"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Jilid 3"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="8dp"
+                            android:text="Perkenalan bacaan kasroh, sukun, dan dhommah" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/card_jilid3"
+                <LinearLayout
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/button_bg_rounded_theme"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3"
+                        android:layout_marginLeft="12dp"
+                        android:textColor="@color/toolbarPrimary"
+                        android:layout_gravity="center_vertical"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!--Jilid 4-->
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_bg_rounded_corners"
-                android:padding="12dp"
-                android:elevation="3dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginBottom="12dp">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:src="@drawable/jilid3"
-                    android:padding="10dp"/>
+                android:layout_marginBottom="14dp"
+                android:orientation="horizontal">
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
-                    <TextView
+                    android:id="@+id/card_jilid4"
+                    android:layout_width="360dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/button_bg_rounded_corners"
+                    android:padding="6dp">
+                    <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Jilid 3"
-                        android:textStyle="bold"/>
-                    <TextView
+                        android:layout_weight="2"
+                        android:padding="9dp"
+                        android:src="@drawable/jilid4" />
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Perkenalan bacaan kasroh, sukun, dan dhommah"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Jilid 4"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="8dp"
+                            android:text="Pengenalan bacaan fathah tanwin, kasroh tanwin, dhommah tanwin" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/card_jilid4"
+                <LinearLayout
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/button_bg_rounded_theme"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4"
+                        android:layout_marginLeft="12dp"
+                        android:textColor="@color/toolbarPrimary"
+                        android:layout_gravity="center_vertical"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!--Jilid 5-->
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_bg_rounded_corners"
-                android:padding="12dp"
-                android:elevation="3dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginBottom="12dp">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:src="@drawable/jilid4"
-                    android:padding="10dp"/>
+                android:layout_marginBottom="14dp"
+                android:orientation="horizontal">
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
-                    <TextView
+                    android:id="@+id/card_jilid5"
+                    android:layout_width="360dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/button_bg_rounded_corners"
+                    android:padding="6dp">
+                    <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Jilid 4"
-                        android:textStyle="bold"/>
-                    <TextView
+                        android:layout_weight="2"
+                        android:padding="16dp"
+                        android:src="@drawable/jilid5" />
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Pengenalan bacaan fathah tanwin, kasroh tanwin, dhommah tanwin"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Jilid 5"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="8dp"
+                            android:text="Pengenalan cara membaca alif-lam qomariah, waqof, mad far’i, idghom, dan alifla" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/card_jilid5"
+                <LinearLayout
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/button_bg_rounded_theme"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:layout_marginLeft="12dp"
+                        android:textColor="@color/toolbarPrimary"
+                        android:layout_gravity="center_vertical"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!--Jilid 6-->
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/button_bg_rounded_corners"
-                android:padding="12dp"
-                android:elevation="3dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginBottom="12dp">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:src="@drawable/jilid5"
-                    android:padding="10dp"/>
+                android:layout_marginBottom="14dp"
+                android:orientation="horizontal">
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Jilid 5"
-                        android:textStyle="bold"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Pengenalan cara membaca alif-lam qomariah, waqof, mad far’i, idghom, dan alifla"/>
-                </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:id="@+id/card_jilid6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_bg_rounded_corners"
-                android:padding="12dp"
-                android:elevation="3dp"
-                android:layout_marginLeft="18dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginBottom="24dp">
-                <ImageView
-                    android:layout_width="match_parent"
+                    android:id="@+id/card_jilid6"
+                    android:layout_width="360dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:src="@drawable/jilid6"
-                    android:padding="10dp"/>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1">
-                    <TextView
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/button_bg_rounded_corners"
+                    android:padding="6dp">
+                    <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="Jilid 6"
-                        android:textStyle="bold"/>
-                    <TextView
+                        android:layout_weight="2"
+                        android:padding="16dp"
+                        android:src="@drawable/jilid6" />
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Memuat semua persoalan-persoalan tajwid"/>
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Jilid 6"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="8dp"
+                            android:text="Pengenalan cara membaca alif-lam qomariah, waqof, mad far’i, idghom, dan alifla" />
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/button_bg_rounded_theme"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="6"
+                        android:layout_marginLeft="12dp"
+                        android:textColor="@color/toolbarPrimary"
+                        android:layout_gravity="center_vertical"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </FrameLayout>
         </LinearLayout>
     </ScrollView>
 

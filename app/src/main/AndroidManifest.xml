@@ -12,7 +12,11 @@
         android:roundIcon="@drawable/logo_iqra"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LatihanBacaActivity"></activity>
+        <activity android:name=".ToolbarProfile" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".LatihanBacaActivity" />
         <activity android:name=".Pengantar1Activity" />
         <activity android:name=".ToolbarTesBaca" />
         <activity android:name=".ToolbarLatihan" />

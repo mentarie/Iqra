@@ -2,6 +2,11 @@
 <resources>
     <color name="colorPrimary">#8DC3C6</color>
     <color name="colorPrimaryDark">#8DC3C6</color>
+    <color name="colorPrimaryMenu">#B5DCD6</color>
     <color name="colorAccent">#D81B60</color>
     <color name="toolbarPrimary">#FEFEFE</color>
+    <color name="colorWhite">#FEFEFE</color>
+    <color name="colorLines">#B2B2B2</color>
+    <color name="colorBackground">#ECECEC</color>
+    <color name="colorSeparator">#DADADA</color>
 </resources>
