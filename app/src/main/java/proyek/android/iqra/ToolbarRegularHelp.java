@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class ToolbarTesBaca extends AppCompatActivity {
+public class ToolbarRegularHelp extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_toolbar_tes_baca);
+        setContentView(R.layout.activity_toolbar_regular_help);
     }
 }

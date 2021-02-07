@@ -26,12 +26,11 @@ public class Pengantar1Activity extends AppCompatActivity {
         ((View) button_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                finish();
+                onBackPressed();
             }
         });
 
-        ImageView latihan_jilid1 = findViewById(R.id.button_latihan);
+        TextView latihan_jilid1 = findViewById(R.id.button_latihan);
         latihan_jilid1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent jilid1 = new Intent(Pengantar1Activity.this, LatihanBacaActivity.class);

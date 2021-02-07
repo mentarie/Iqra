@@ -20,10 +20,32 @@
             android:layout_height="190dp"
             android:layout_marginBottom="12dp"
             android:src="@drawable/illustrasi_home"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Assalamualaikum, "
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"/>
+            <TextView
+                android:id="@+id/tvResultNama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Nama"
+                android:textSize="16sp"
+                android:layout_marginBottom="4dp"/>
+        </LinearLayout>
         <ImageView
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginBottom="14dp"
             android:src="@drawable/teks_pilih_jilid"/>
     </LinearLayout>
@@ -47,7 +69,7 @@
                 android:orientation="horizontal">
                 <LinearLayout
                     android:id="@+id/card_jilid1"
-                    android:layout_width="360dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="32dp"
                     android:layout_marginRight="18dp"
@@ -102,7 +124,7 @@
                 android:orientation="horizontal">
                 <LinearLayout
                     android:id="@+id/card_jilid2"
-                    android:layout_width="360dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="32dp"
                     android:layout_marginRight="18dp"
@@ -157,7 +179,7 @@
                 android:orientation="horizontal">
                 <LinearLayout
                     android:id="@+id/card_jilid3"
-                    android:layout_width="360dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="32dp"
                     android:layout_marginRight="18dp"
@@ -212,7 +234,7 @@
                 android:orientation="horizontal">
                 <LinearLayout
                     android:id="@+id/card_jilid4"
-                    android:layout_width="360dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="32dp"
                     android:layout_marginRight="18dp"
@@ -267,7 +289,7 @@
                 android:orientation="horizontal">
                 <LinearLayout
                     android:id="@+id/card_jilid5"
-                    android:layout_width="360dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="32dp"
                     android:layout_marginRight="18dp"
@@ -322,7 +344,7 @@
                 android:orientation="horizontal">
                 <LinearLayout
                     android:id="@+id/card_jilid6"
-                    android:layout_width="360dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="32dp"
                     android:layout_marginRight="18dp"
@@ -348,7 +370,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginRight="8dp"
-                            android:text="Pengenalan cara membaca alif-lam qomariah, waqof, mad far’i, idghom, dan alifla" />
+                            android:text="Menerapkan berbagai hukum bacaan. Belajar membaca ayat Al-Qur'an secara langsung." />
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout

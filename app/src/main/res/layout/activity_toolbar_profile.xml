@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".ToolbarProfile">
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,8 +13,7 @@
         android:minHeight="?attr/actionBarSize"
         android:orientation="vertical"
         android:elevation="32dp"
-        android:background="@drawable/bg_header_profile"
-        >
+        android:background="@drawable/bg_header_profile">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

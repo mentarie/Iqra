@@ -15,45 +15,57 @@
         android:background="@drawable/bg_ornamen"
         android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:text="Pengantar"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:textSize="18dp" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="420dp"
-            android:layout_marginLeft="14dp"
-            android:layout_marginRight="14dp"
-            android:src="@drawable/pengantar_jilid1" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="14dp">
-
+            android:padding="14dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="14dp"
+            android:background="@drawable/button_bg_rounded_corners">
             <ImageView
-                android:id="@+id/button_latihan"
-                android:layout_width="wrap_content"
-                android:layout_height="88dp"
-                android:layout_marginRight="6dp"
-                android:layout_weight="1"
-                android:src="@drawable/button_latihan" />
-
-            <ImageView
-                android:id="@+id/button_tesbaca"
-                android:layout_width="wrap_content"
-                android:layout_height="88dp"
-                android:layout_marginLeft="6dp"
-                android:layout_weight="1"
-                android:src="@drawable/button_tesbaca" />
-
+                android:layout_width="match_parent"
+                android:layout_height="420dp"
+                android:src="@drawable/pengantar_jilid1" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp">
+            <TextView
+                android:id="@+id/button_latihan"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginEnd="6dp"
+                android:text="Latihan"
+                android:gravity="center_vertical"
+                android:padding="12dp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:background="@drawable/button_bg_rounded_corners_line" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingBottom="14dp"
+            >
+            <TextView
+                android:id="@+id/button_tesbaca"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginEnd="6dp"
+                android:text="Tes Baca"
+                android:gravity="center_vertical"
+                android:padding="12dp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:background="@drawable/button_bg_rounded_corners_line" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

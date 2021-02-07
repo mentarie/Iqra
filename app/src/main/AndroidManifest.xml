@@ -5,6 +5,9 @@
 
     <dist:module dist:instant="true" />
 
+    <!--Internet Permission-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_iqra"
@@ -12,9 +15,11 @@
         android:roundIcon="@drawable/logo_iqra"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditEmailActivity"></activity>
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".TesBacaActivity" />
+        <activity android:name=".EditEmailActivity" />
         <activity android:name=".EditPasswordActivity" />
-        <activity android:name=".ToolbarEditor" />
         <activity android:name=".EditNameActivity" />
         <activity android:name=".ToolbarProfile" />
         <activity android:name=".ProfileActivity" />
@@ -22,11 +27,12 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".LatihanBacaActivity" />
         <activity android:name=".Pengantar1Activity" />
-        <activity android:name=".ToolbarTesBaca" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".ToolbarRegularHelp" />
+        <activity android:name=".ToolbarEditor" />
         <activity android:name=".ToolbarLatihan" />
         <activity android:name=".ToolbarRegular" />
         <activity android:name=".ToolbarHome" />
-        <activity android:name=".HomeActivity" />
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,5 +42,4 @@
         </activity>
         <activity android:name=".MainActivity" />
     </application>
-
 </manifest>

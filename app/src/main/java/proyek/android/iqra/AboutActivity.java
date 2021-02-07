@@ -8,24 +8,24 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class EditPasswordActivity extends AppCompatActivity {
-    ImageView button_close;
+public class AboutActivity extends AppCompatActivity {
     TextView textJudul;
+    ImageView button_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_password);
+        setContentView(R.layout.activity_about);
 
-        button_close = findViewById(R.id.button_close);
-        ((View) button_close).setOnClickListener(new View.OnClickListener() {
+        textJudul = (TextView) findViewById(R.id.textToolbar);
+        textJudul.setText("Tentang Buku Iqra");
+
+        button_back = findViewById(R.id.button_back);
+        ((View) button_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
-
-        textJudul = (TextView) findViewById(R.id.textToolbar);
-        textJudul.setText("Ubah Password");
     }
 }
