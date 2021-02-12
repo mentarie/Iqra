@@ -1,4 +1,4 @@
-package proyek.android.iqra;
+package proyek.android.iqra.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,24 +8,26 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class EditEmailActivity extends AppCompatActivity {
-    ImageView button_close;
+import proyek.android.iqra.R;
+
+public class AboutActivity extends AppCompatActivity {
     TextView textJudul;
+    ImageView button_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_email);
+        setContentView(R.layout.activity_about);
 
-        button_close = findViewById(R.id.button_close);
-        ((View) button_close).setOnClickListener(new View.OnClickListener() {
+        textJudul = (TextView) findViewById(R.id.textToolbar);
+        textJudul.setText("Tentang Buku Iqra");
+
+        button_back = findViewById(R.id.button_back);
+        ((View) button_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
-
-        textJudul = (TextView) findViewById(R.id.textToolbar);
-        textJudul.setText("Ubah Email");
     }
 }

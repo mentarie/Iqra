@@ -1,4 +1,4 @@
-package proyek.android.iqra;
+package proyek.android.iqra.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +17,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import proyek.android.iqra.R;
 
 public class LatihanBacaActivity extends AppCompatActivity {
     TextView textJudul;

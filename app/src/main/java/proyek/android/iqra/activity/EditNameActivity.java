@@ -1,4 +1,4 @@
-package proyek.android.iqra;
+package proyek.android.iqra.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import proyek.android.iqra.R;
 
 public class EditNameActivity extends AppCompatActivity {
     ImageView button_close;

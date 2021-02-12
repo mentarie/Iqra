@@ -1,4 +1,4 @@
-package proyek.android.iqra;
+package proyek.android.iqra.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,24 +8,26 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class AboutActivity extends AppCompatActivity {
+import proyek.android.iqra.R;
+
+public class EditPasswordActivity extends AppCompatActivity {
+    ImageView button_close;
     TextView textJudul;
-    ImageView button_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        setContentView(R.layout.activity_edit_password);
 
-        textJudul = (TextView) findViewById(R.id.textToolbar);
-        textJudul.setText("Tentang Buku Iqra");
-
-        button_back = findViewById(R.id.button_back);
-        ((View) button_back).setOnClickListener(new View.OnClickListener() {
+        button_close = findViewById(R.id.button_close);
+        ((View) button_close).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
             }
         });
+
+        textJudul = (TextView) findViewById(R.id.textToolbar);
+        textJudul.setText("Ubah Password");
     }
 }

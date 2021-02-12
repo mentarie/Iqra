@@ -1,10 +1,12 @@
-package proyek.android.iqra;
+package proyek.android.iqra.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.content.Intent;
+
+import proyek.android.iqra.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
     private int waktu_loading=4000;

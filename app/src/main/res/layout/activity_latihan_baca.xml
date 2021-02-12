@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorBackground"
-    tools:context=".LatihanBacaActivity">
+    tools:context=".activity.LatihanBacaActivity">
 
     <include
         layout="@layout/activity_toolbar_regular"/>

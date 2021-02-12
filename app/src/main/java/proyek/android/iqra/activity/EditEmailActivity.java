@@ -1,4 +1,4 @@
-package proyek.android.iqra;
+package proyek.android.iqra.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,14 +8,16 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class EditPasswordActivity extends AppCompatActivity {
+import proyek.android.iqra.R;
+
+public class EditEmailActivity extends AppCompatActivity {
     ImageView button_close;
     TextView textJudul;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_password);
+        setContentView(R.layout.activity_edit_email);
 
         button_close = findViewById(R.id.button_close);
         ((View) button_close).setOnClickListener(new View.OnClickListener() {
@@ -26,6 +28,6 @@ public class EditPasswordActivity extends AppCompatActivity {
         });
 
         textJudul = (TextView) findViewById(R.id.textToolbar);
-        textJudul.setText("Ubah Password");
+        textJudul.setText("Ubah Email");
     }
 }
