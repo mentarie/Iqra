@@ -40,17 +40,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Email" />
+                android:text="Username" />
             <EditText
-                android:id="@+id/editTextTextEmailAddress"
+                android:id="@+id/editTextTextUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:hint="your@mail.com"
-                android:inputType="textEmailAddress"
+                android:hint="Nama akun"
                 android:background="@android:color/transparent"/>
             <View
                 android:layout_width="fill_parent"

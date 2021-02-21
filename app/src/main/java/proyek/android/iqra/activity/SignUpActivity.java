@@ -157,46 +157,4 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
-
-
-    //proses ketika signup
-//    private void signUp(user) {
-//        // display a progress dialog
-//        final ProgressDialog progressDialog = new ProgressDialog(SignUpActivity.this);
-//        progressDialog.setCancelable(false); // set cancelable to false
-//        progressDialog.setMessage("Harap Tunggu ..."); // set message
-//        progressDialog.show(); // show progress dialog
-//
-//        mApiService.CreateUserHandler().enqueue(new Callback<SignUpResponse>() {
-//            @Override
-//            public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
-//                if(response.isSuccessful()) {
-//                    Log.i("debug", "onResponse: BERHASIL");
-//                    loading.dismiss();
-//                    try {
-//                        JSONObject jsonRESULTS = new JSONObject(response.body().toString());
-//                        if (jsonRESULTS.getString("error").equals("false")){
-//                            Toast.makeText(mContext, "BERHASIL REGISTRASI", Toast.LENGTH_SHORT).show();
-//                            startActivity(new Intent(mContext, HomeActivity.class));
-//                        } else {
-//                            String error_message = jsonRESULTS.getString("error_msg");
-//                            Toast.makeText(mContext, error_message, Toast.LENGTH_SHORT).show();
-//                        }
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
-//                } else {
-//                    Log.i("debug", "onResponse: TIDAK BERHASIL");
-//                    loading.dismiss();
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<SignUpResponse> call, Throwable t) {
-//                Log.d("response", t.getStackTrace().toString());
-//                Toast.makeText(mContext, "Koneksi Internet Bermasalah", Toast.LENGTH_SHORT).show();
-//                progressDialog.dismiss();
-//            }
-//        });
-//    }
 }

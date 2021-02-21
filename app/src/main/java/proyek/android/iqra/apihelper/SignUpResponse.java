@@ -4,8 +4,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class SignUpResponse {
-    private String success;
-    private String message;
 
     @SerializedName("username")
     @Expose
