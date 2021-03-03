@@ -49,6 +49,14 @@ public class SignInActivity extends AppCompatActivity {
         mContext = this;
         mApiService = UtilsApi.getAPIService(); // meng-init yang ada di package apihelper
 
+        // Check if UserResponse is Already Logged In
+        if(SaveSharedPreference.getLoggedStatus(getApplicationContext())) {
+            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+            startActivity(intent);
+        } else {
+            initComponents();
+        }
+
         initComponents();
 
         // widget show hide password
@@ -123,11 +131,9 @@ public class SignInActivity extends AppCompatActivity {
             public void onResponse(Call<SignInResponse> call, Response<SignInResponse> response) {
                 if(response.isSuccessful()){
                     SignInResponse resObj = (SignInResponse) response.body();
-//                    if(resObj.getMessage().equals("true")){
-//                    } else {
-//                        Toast.makeText(SignInActivity.this, "The username or password is incorrect", Toast.LENGTH_SHORT).show();
-//                    }
                     token = response.body().getToken();
+                    //save token
+                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true);
                     //login start main activity
                     Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
                     intent.putExtra("username", String.valueOf(etUsername));

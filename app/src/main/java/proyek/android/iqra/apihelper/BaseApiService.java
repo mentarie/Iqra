@@ -14,4 +14,6 @@ public interface BaseApiService {
     @POST("/login")
     Call<SignInResponse>LoginHandler(@Body SignInResponse SignInResponse);
 
+    @POST("logout")
+    Call<Void> logout();
 }
