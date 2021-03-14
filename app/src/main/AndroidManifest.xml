@@ -3,9 +3,7 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="proyek.android.iqra">
 
-    <dist:module dist:instant="true" />
-
-    <!--Internet Permission-->
+    <dist:module dist:instant="true" /> <!-- Internet Permission -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -14,11 +12,46 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/logo_iqra"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activity.tes_baca.TesBacaActivity_Ebta"></activity>
+        <activity android:name=".activity.tes_baca.TesBacaActivity_18" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_17" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_16" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_15" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_14" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_13" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_12" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_11" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_10" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_9" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_8" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_7" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_6" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_5" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_4" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_3" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity_2" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_18" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_17" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_16" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_15" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_14" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_13" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_12" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_11" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_10" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_9" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_8" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_7" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_6" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_5" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_4" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_3" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity_2" />
         <activity android:name=".activity.HistoryActivity" />
         <activity android:name=".activity.AboutActivity" />
-        <activity android:name=".activity.TesBacaActivity" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity" />
         <activity android:name=".activity.EditEmailActivity" />
         <activity android:name=".activity.EditPasswordActivity" />
         <activity android:name=".activity.EditNameActivity" />
@@ -26,7 +59,7 @@
         <activity android:name=".activity.ProfileActivity" />
         <activity android:name=".activity.SignInActivity" />
         <activity android:name=".activity.SignUpActivity" />
-        <activity android:name=".activity.LatihanBacaActivity" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity" />
         <activity android:name=".activity.Pengantar1Activity" />
         <activity android:name=".activity.HomeActivity" />
         <activity android:name=".ToolbarRegularHelp" />
@@ -43,4 +76,5 @@
         </activity>
         <activity android:name=".activity.MainActivity" />
     </application>
+
 </manifest>

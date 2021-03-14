@@ -8,7 +8,7 @@ import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface BaseApiService {
-    @POST("/users")
+    @POST("/create")
     Call<SignUpResponse>CreateUserHandler(@Body SignUpResponse SignUpResponse);
 
     @POST("/login")

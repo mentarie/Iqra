@@ -4,7 +4,7 @@
     android:id="@+id/activity_tes_baca"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.TesBacaActivity"
+    tools:context=".activity.tes_baca.TesBacaActivity"
     android:orientation="vertical">
     <include
         layout="@layout/activity_toolbar_regular"/>

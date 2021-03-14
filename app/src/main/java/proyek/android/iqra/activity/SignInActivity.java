@@ -23,7 +23,7 @@ import okhttp3.ResponseBody;
 import proyek.android.iqra.R;
 import proyek.android.iqra.apihelper.BaseApiService;
 import proyek.android.iqra.apihelper.SignInResponse;
-import proyek.android.iqra.apihelper.SignUpResponse;
+import proyek.android.iqra.apihelper.PreferencesUtility;
 import proyek.android.iqra.apihelper.UtilsApi;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -50,14 +50,12 @@ public class SignInActivity extends AppCompatActivity {
         mApiService = UtilsApi.getAPIService(); // meng-init yang ada di package apihelper
 
         // Check if UserResponse is Already Logged In
-        if(SaveSharedPreference.getLoggedStatus(getApplicationContext())) {
-            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-            startActivity(intent);
-        } else {
+//        if(SaveSharedPreference.getLoggedStatus(getApplicationContext())) {
+//            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+//            startActivity(intent);
+//        } else {
             initComponents();
-        }
-
-        initComponents();
+//        }
 
         // widget show hide password
         ImgShowHidePassword = findViewById(R.id.button_show_pass);
@@ -130,14 +128,16 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<SignInResponse> call, Response<SignInResponse> response) {
                 if(response.isSuccessful()){
+                    //save token
                     SignInResponse resObj = (SignInResponse) response.body();
                     token = response.body().getToken();
-                    //save token
                     SaveSharedPreference.setLoggedIn(getApplicationContext(), true);
+
                     //login start main activity
                     Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
-                    intent.putExtra("username", String.valueOf(etUsername));
+//                    intent.putExtra("username", String.valueOf(token.indexOf(3)));
                     startActivity(intent);
+
                 } else {
                     Toast.makeText(SignInActivity.this, "Error! Please try again!", Toast.LENGTH_SHORT).show();
                     progressDialog.setCancelable(true);

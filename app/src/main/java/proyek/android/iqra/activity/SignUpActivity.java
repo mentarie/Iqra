@@ -143,7 +143,7 @@ public class SignUpActivity extends AppCompatActivity {
                 if(response.isSuccessful()) {
                     Log.i("debug", "onResponse: BERHASIL");
                     progressDialog.dismiss();
-                    startActivity(new Intent(mContext, HomeActivity.class));
+                    startActivity(new Intent(mContext, SignInActivity.class));
                 } else {
                     Log.i("debug", "onResponse: TIDAK BERHASIL");
                     progressDialog.dismiss();
