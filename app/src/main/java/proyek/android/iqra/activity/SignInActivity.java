@@ -17,13 +17,12 @@ import android.widget.Toast;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
-
-import okhttp3.ResponseBody;
 import proyek.android.iqra.R;
 import proyek.android.iqra.apihelper.BaseApiService;
-import proyek.android.iqra.apihelper.SignInResponse;
 import proyek.android.iqra.apihelper.PreferencesUtility;
+import proyek.android.iqra.apihelper.SaveSharedPreference;
+import proyek.android.iqra.apihelper.signin.SignInRequest;
+import proyek.android.iqra.apihelper.signin.SignInResponse;
 import proyek.android.iqra.apihelper.UtilsApi;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,7 +38,8 @@ public class SignInActivity extends AppCompatActivity {
     BaseApiService mApiService;
 
     private boolean isOpenEye = false;
-    private static String token;
+    private String token, setUsername, setEmail, getUsername, getEmail;
+    private boolean flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +49,13 @@ public class SignInActivity extends AppCompatActivity {
         mContext = this;
         mApiService = UtilsApi.getAPIService(); // meng-init yang ada di package apihelper
 
-        // Check if UserResponse is Already Logged In
-//        if(SaveSharedPreference.getLoggedStatus(getApplicationContext())) {
-//            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
-//            startActivity(intent);
-//        } else {
+        //Check if UserResponse is Already Logged In
+        if(SaveSharedPreference.getLoggedStatus(getApplicationContext())) {
+            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+            startActivity(intent);
+        } else {
             initComponents();
-//        }
+        }
 
         // widget show hide password
         ImgShowHidePassword = findViewById(R.id.button_show_pass);
@@ -93,7 +93,7 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //parsing
-                SignInResponse user = new SignInResponse (
+                SignInRequest user = new SignInRequest(
                         etUsername.getText().toString().trim(),
                         etPassword.getText().toString()
                 );
@@ -117,7 +117,7 @@ public class SignInActivity extends AppCompatActivity {
         return false;
     }
 
-    private void logIn(SignInResponse user) {
+    private void logIn(SignInRequest user) {
         // display a progress dialog
         final ProgressDialog progressDialog = new ProgressDialog(SignInActivity.this);
         progressDialog.setCancelable(false); // set cancelable to false
@@ -130,12 +130,27 @@ public class SignInActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     //save token
                     SignInResponse resObj = (SignInResponse) response.body();
-                    token = response.body().getToken();
-                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true);
+                    token = response.body().getData().getAccessToken();
+                    setUsername = response.body().getData().getUsername();
+                    setEmail = response.body().getData().getEmail();
+                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true, setUsername, setEmail);
+
+                    PreferencesUtility.saveUsername(setUsername, getApplicationContext());
+                    PreferencesUtility.saveEmail(setEmail, getApplicationContext());
+
+                    flag = SaveSharedPreference.getLoggedStatus(getApplicationContext());
+                    getUsername = PreferencesUtility.getUsername(getApplicationContext());
+                    getEmail = PreferencesUtility.getEmail(getApplicationContext());
+
+//                    Log.d("setUsername", setUsername);
+//                    Log.d("setEmail", setEmail);
+//                    Log.d("data", response.body().getData().toString());
+//                    Log.d("getLoggedStatus", String.valueOf(flag));
+//                    Log.d("getUsername", flag2);
+//                    Log.d("getEmail", flag3);
 
                     //login start main activity
                     Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
-//                    intent.putExtra("username", String.valueOf(token.indexOf(3)));
                     startActivity(intent);
 
                 } else {

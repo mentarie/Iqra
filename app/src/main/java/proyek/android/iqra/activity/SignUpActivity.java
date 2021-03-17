@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 import proyek.android.iqra.R;
 import proyek.android.iqra.apihelper.BaseApiService;
-import proyek.android.iqra.apihelper.SignUpResponse;
+import proyek.android.iqra.apihelper.signup.SignUpResponse;
 import proyek.android.iqra.apihelper.UtilsApi;
 import retrofit2.Call;
 import retrofit2.Callback;

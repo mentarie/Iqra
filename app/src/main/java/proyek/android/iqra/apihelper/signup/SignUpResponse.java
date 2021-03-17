@@ -1,4 +1,4 @@
-package proyek.android.iqra.apihelper;
+package proyek.android.iqra.apihelper.signup;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

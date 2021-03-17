@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import proyek.android.iqra.R;
+
 public class TesBacaActivity_2 extends AppCompatActivity {
 
     @Override

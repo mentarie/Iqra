@@ -13,15 +13,11 @@ import proyek.android.iqra.R;
 
 public class HomeActivity extends AppCompatActivity {
     ImageView profile;
-    TextView tvResultNama;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        TextView tvResultNama = findViewById(R.id.tvResultNama);
-        tvResultNama.setText(getIntent().getExtras().getString("username"));
 
         LinearLayout card_jilid1 = findViewById(R.id.card_jilid1);
         card_jilid1.setOnClickListener(new View.OnClickListener() {

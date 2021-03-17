@@ -13,12 +13,11 @@ import android.widget.Toast;
 
 import proyek.android.iqra.R;
 import proyek.android.iqra.apihelper.BaseApiService;
-import proyek.android.iqra.apihelper.SignInResponse;
 import proyek.android.iqra.apihelper.UtilsApi;
+import proyek.android.iqra.apihelper.SaveSharedPreference;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class ProfileActivity extends AppCompatActivity {
     ImageView button_back;
@@ -37,9 +36,10 @@ public class ProfileActivity extends AppCompatActivity {
         ((View) button_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left);
-                finish();
+//                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+//                overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left);
+//                finish();
+                onBackPressed();
             }
         });
         LinearLayout button_nama_edit = findViewById(R.id.button_nama_edit);
@@ -87,29 +87,8 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Set LoggedIn status to false
-                SaveSharedPreference.setLoggedIn(getApplicationContext(), false);
-
-                // Logout
-                logout();
-            }
-        });
-    }
-
-    private void logout() {
-        mApiService.logout().enqueue(new Callback<Void>() {
-            @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
-                if (response.code() == 200) {
-                    Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
-                }
-            }
-
-            @Override
-            public void onFailure(Call call, Throwable t) {
-                Log.d("response", t.getStackTrace().toString());
-                Toast.makeText(mContext, "Koneksi Internet Bermasalah", Toast.LENGTH_SHORT).show();
+                SaveSharedPreference.setLoggedOut(getApplicationContext(), false);
+                finish();
             }
         });
     }
