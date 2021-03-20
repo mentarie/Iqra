@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="25240aee-3c6b-4803-b3ae-c072f80f13b5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/HomeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/Pengantar1Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/Pengantar1Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/ProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/ProfileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/SignInActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/SignInActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/SignUpActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/SignUpActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_10.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_10.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_11.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_11.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_12.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_12.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_13.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_13.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_14.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_14.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_15.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_15.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_16.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_16.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_17.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_17.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_18.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_18.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_5.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_6.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_7.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_8.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_8.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_9.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/latihan/LatihanBacaActivity_9.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_10.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_10.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_11.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_11.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_12.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_12.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_13.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_13.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_14.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_14.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_15.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_15.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_16.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_16.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_17.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_17.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_18.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_18.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_4.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_6.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_7.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_8.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_8.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_9.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_9.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_Ebta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/proyek/android/iqra/activity/tes_baca/TesBacaActivity_Ebta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/activity_edit_email.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/activity_edit_email.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/activity_edit_name.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/activity_edit_name.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../layout/activity_edit_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../layout/activity_edit_password.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../raw/mp_baca_j1_h10_13.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../values/styles.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectId" id="1q12a0XMtkfUJNHm7a1s08zPf5Y" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25240aee-3c6b-4803-b3ae-c072f80f13b5" name="Default Changelist" comment="" />
+      <created>1616232834386</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616232834386</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="416" y="23" key="#Project_Structure" timestamp="1616232854305">
+      <screen x="0" y="23" width="1440" height="823" />
+    </state>
+    <state x="416" y="23" key="#Project_Structure/0.23.1440.823@0.23.1440.823" timestamp="1616232854305" />
+  </component>
+</project>

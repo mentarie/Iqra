@@ -36,10 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
         ((View) button_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-//                overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left);
-//                finish();
-                onBackPressed();
+                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
             }
         });
         LinearLayout button_nama_edit = findViewById(R.id.button_nama_edit);
@@ -88,14 +85,12 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Set LoggedIn status to false
                 SaveSharedPreference.setLoggedOut(getApplicationContext(), false);
-                finish();
+                moveTaskToBack(true);
             }
         });
     }
-
-    public void onBackPressed(){
+    @Override
+    public void onBackPressed() {
         startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-        overridePendingTransition(R.anim.left_to_right, R.anim.right_to_left);
-        finish();
     }
 }

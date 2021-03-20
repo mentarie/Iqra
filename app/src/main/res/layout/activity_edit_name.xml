@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:text="Anda dapat menggunakan nama panggilan bahkan nama lengkap. Nama yang tersimpan akan muncul dalam halaman profil."/>
         </LinearLayout>
     </LinearLayout>

@@ -232,4 +232,9 @@ public class LatihanBacaActivity_7 extends AppCompatActivity {
                 handler_interact.post(runnable_interact); }
         }, 3000);
     }
+
+    public void onBackPressed(){
+        startActivity(new Intent(getApplicationContext(), Pengantar1Activity.class));
+        finish();
+    }
 }

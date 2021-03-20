@@ -5,6 +5,7 @@
 
     <dist:module dist:instant="true" /> <!-- Internet Permission -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -14,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.tes_baca.TesBacaActivity_Ebta"></activity>
+        <activity android:name=".activity.tes_baca.TesBacaActivity_Ebta" />
         <activity android:name=".activity.tes_baca.TesBacaActivity_18" />
         <activity android:name=".activity.tes_baca.TesBacaActivity_17" />
         <activity android:name=".activity.tes_baca.TesBacaActivity_16" />

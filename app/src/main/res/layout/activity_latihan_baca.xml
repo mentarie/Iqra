@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_latihan_baca"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,10 +10,14 @@
     tools:context=".activity.latihan.LatihanBacaActivity">
 
     <include
+        android:id="@+id/include"
         layout="@layout/activity_toolbar_regular"/>
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/include">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -45,23 +50,23 @@
                     <ImageView
                         android:id="@+id/baca_j1_h1_2"
                         android:layout_width="0dp"
-                        android:layout_height="50dp"
+                        android:layout_height="46dp"
                         android:layout_weight="1"
                         android:padding="4dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
                         android:src="@drawable/jilid1_hal1_2"/>
                     <ImageView
                         android:id="@+id/baca_j1_h1_1"
                         android:layout_width="0dp"
-                        android:layout_height="50dp"
+                        android:layout_height="46dp"
                         android:layout_weight="1"
                         android:padding="4dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="12dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
                         android:src="@drawable/jilid1_hal1_1"/>
                 </LinearLayout>
 
@@ -358,12 +363,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="14dp"
-        android:layout_marginRight="14dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:gravity="center">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="48px"
+        tools:layout_editor_absoluteX="14dp">
         <ImageView
             android:id="@+id/j1_h1_b"
             android:layout_width="32dp"
@@ -386,4 +391,4 @@
             android:src="@drawable/ic_baseline_navigate_next"
             android:background="@drawable/button_bg_rounded_theme"/>
     </LinearLayout>
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

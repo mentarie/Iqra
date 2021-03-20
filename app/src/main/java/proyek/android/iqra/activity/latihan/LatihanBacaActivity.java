@@ -20,6 +20,8 @@ import java.util.TimerTask;
 
 import proyek.android.iqra.R;
 import proyek.android.iqra.activity.EditNameActivity;
+import proyek.android.iqra.activity.HomeActivity;
+import proyek.android.iqra.activity.Pengantar1Activity;
 import proyek.android.iqra.activity.ProfileActivity;
 
 public class LatihanBacaActivity extends AppCompatActivity {
@@ -219,5 +221,9 @@ public class LatihanBacaActivity extends AppCompatActivity {
                 };
                 handler_interact.post(runnable_interact); }
         }, 3000);
+    }
+    public void onBackPressed(){
+        startActivity(new Intent(getApplicationContext(), Pengantar1Activity.class));
+        finish();
     }
 }

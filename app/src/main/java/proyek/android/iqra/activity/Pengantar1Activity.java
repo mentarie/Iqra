@@ -28,7 +28,7 @@ public class Pengantar1Activity extends AppCompatActivity {
         ((View) button_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
             }
         });
 
