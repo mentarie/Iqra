@@ -12,6 +12,7 @@
     <include
         android:id="@+id/include"
         layout="@layout/activity_toolbar_regular"/>
+
     <ScrollView
         android:id="@+id/scrollView3"
         android:layout_width="match_parent"
@@ -36,7 +37,7 @@
                     android:textAlignment="center"
                     android:background="@drawable/button_bg_rounded_theme"
                     android:textColor="@color/colorWhite"
-                    android:text="Klik pada bacaan untuk mendengarkan audio"/>
+                    android:text="Klik pada bacaan untuk mulai merekam"/>
 
                 <!--Kolom 1-2-->
                 <LinearLayout
@@ -359,6 +360,7 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
     <!--Navigasi halaman-->
     <LinearLayout
         android:layout_width="match_parent"

@@ -75,12 +75,6 @@ public class SignInActivity extends AppCompatActivity {
                 }
             }
         });
-        button_signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(mContext, SignUpActivity.class));
-            }
-        });
     }
 
     private void initComponents() {
@@ -102,6 +96,12 @@ public class SignInActivity extends AppCompatActivity {
                     loading = ProgressDialog.show(mContext, null, "Harap Tunggu...", true, false);
                     logIn(user);
                 }
+            }
+        });
+        button_signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, SignUpActivity.class));
             }
         });
     }

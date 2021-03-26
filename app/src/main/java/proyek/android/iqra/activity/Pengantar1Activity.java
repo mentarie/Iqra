@@ -48,4 +48,8 @@ public class Pengantar1Activity extends AppCompatActivity {
             }
         });
     }
+
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+    }
 }
