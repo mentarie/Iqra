@@ -9,10 +9,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import proyek.android.iqra.R;
 import proyek.android.iqra.apihelper.BaseApiService;
+import proyek.android.iqra.apihelper.PreferencesUtility;
 import proyek.android.iqra.apihelper.UtilsApi;
 import proyek.android.iqra.apihelper.SaveSharedPreference;
 import retrofit2.Call;
@@ -21,8 +23,11 @@ import retrofit2.Response;
 
 public class ProfileActivity extends AppCompatActivity {
     ImageView button_back;
+    TextView textNama, textEmail;
     Context mContext;
     BaseApiService mApiService;
+
+    private String getUsername, getEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,16 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),HomeActivity.class));
             }
         });
+        if (SaveSharedPreference.getLoggedStatus(getApplicationContext())){
+            getUsername = PreferencesUtility.getUsername(getApplicationContext());
+            getEmail = PreferencesUtility.getEmail(getApplicationContext());
+
+            textNama = (TextView) findViewById(R.id.textNama);
+            textNama.setText(getUsername);
+
+            textEmail = (TextView) findViewById(R.id.textEmail);
+            textEmail.setText(getEmail);
+        }
         LinearLayout button_nama_edit = findViewById(R.id.button_nama_edit);
         button_nama_edit.setOnClickListener(new View.OnClickListener() {
             @Override

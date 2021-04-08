@@ -186,10 +186,10 @@
                             android:textSize="12dp"
                             tools:ignore="RtlCompat"
                             />
-                        <ImageView
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/ic_outline_edit_black"/>
+<!--                        <ImageView-->
+<!--                            android:layout_width="24dp"-->
+<!--                            android:layout_height="24dp"-->
+<!--                            android:src="@drawable/ic_outline_edit_black"/>-->
                     </LinearLayout>
                     <View
                         android:layout_width="fill_parent"

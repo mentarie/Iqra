@@ -31,15 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Assalamualaikum, "
-                android:textSize="16sp"
-                android:layout_marginBottom="4dp"/>
-            <TextView
-                android:id="@+id/tvResultNama"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Nama"
+                android:text="Assalamualaikum"
                 android:textSize="16sp"
                 android:layout_marginBottom="4dp"/>
         </LinearLayout>

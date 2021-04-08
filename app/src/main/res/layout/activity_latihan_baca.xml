@@ -37,7 +37,7 @@
                     android:textAlignment="center"
                     android:background="@drawable/button_bg_rounded_theme"
                     android:textColor="@color/colorWhite"
-                    android:text="Klik pada bacaan untuk mulai merekam"/>
+                    android:text="Klik pada bacaan untuk mendengarkan audio"/>
 
                 <!--Kolom 1-2-->
                 <LinearLayout

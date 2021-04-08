@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#fff"/>
+            <stroke android:color="#b2b2b2" android:width="3dp" />
+            <!--corners allow us to make the rounded corners button-->
+        </shape>
+    </item>
+</selector>
