@@ -31,8 +31,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Assalamualaikum"
+                android:text="Assalamualaikum, "
                 android:textSize="16sp"
+                android:layout_marginBottom="4dp"/>
+            <TextView
+                android:id="@+id/textnama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Santri"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 android:layout_marginBottom="4dp"/>
         </LinearLayout>
         <ImageView

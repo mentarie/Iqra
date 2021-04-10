@@ -5,166 +5,198 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context=".activity.SignUpActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
         android:orientation="vertical"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="48dp"
-            android:layout_marginBottom="12dp"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/logo_iqra"/>
-        <TextView
+        android:gravity="center_vertical"
+        android:elevation="32px">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="64dp"
-            android:text="Register"
-            android:textSize="18dp"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Email" />
-            <EditText
-                android:id="@+id/editTextTextEmailAddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:hint="your@mail.com"
-                android:inputType="textEmailAddress"
-                android:background="@android:color/transparent"/>
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="24dp"
-                android:background="@color/colorLines"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Username" />
-            <EditText
-                android:id="@+id/editTextTextUsername"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:hint="ex: Alif"
-                android:background="@android:color/transparent"/>
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="24dp"
-                android:background="@color/colorLines"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginBottom="24dp">
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Password" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:weightSum="12">
-                <EditText
-                    android:id="@+id/editTextTextPassword"
-                    android:layout_width="0dp"
-                    android:layout_weight="11"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="********"
-                    android:inputType="textPassword"
-                    android:background="@android:color/transparent"/>
-                <ImageView
-                    android:id="@+id/button_show_pass"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_gravity="center_vertical"
-                    android:src="@drawable/password_visibility"/>
-            </LinearLayout>
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="12dp"
-                android:background="@color/colorLines"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="10dp"
-                android:text="Password minimal berisi 8 karakter terdiri dari angka, huruf, dan huruf kapital" />
-        </LinearLayout>
-        <TextView
-            android:id="@+id/button_signup"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@drawable/button_bg_rounded_theme"
-            android:gravity="center"
-            android:layout_gravity="right"
-            android:text="Daftar"
-            android:textAlignment="center"
-            android:textColor="#fff"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:gravity="center"
-            android:layout_gravity="center_horizontal"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/button_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_weight="1"
-                android:textSize="14sp"
-                android:textAlignment="viewEnd"
-                android:text="Sudah punya akun?" />
+                android:src="@drawable/ic_baseline_arrow_back_black" />
             <TextView
-                android:id="@id/button_signin"
-                android:layout_width="100dp"
+                android:id="@+id/textToolbar"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:text=""
+                android:layout_gravity="center_vertical"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                tools:ignore="RtlCompat" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp">
+            <ImageView
+                android:layout_width="match_parent"
                 android:layout_weight="1"
-                android:textSize="14sp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="12dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/logo_iqra"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="64dp"
+                android:text="Register"
+                android:textSize="18dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"
-                android:text="  Login" />
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Email" />
+                <EditText
+                    android:id="@+id/editTextTextEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:hint="your@mail.com"
+                    android:inputType="textEmailAddress"
+                    android:background="@android:color/transparent"/>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@color/colorLines"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Username" />
+                <EditText
+                    android:id="@+id/editTextTextUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:hint="ex: Alif"
+                    android:background="@android:color/transparent"/>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@color/colorLines"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp">
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Password" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:weightSum="12">
+                    <EditText
+                        android:id="@+id/editTextTextPassword"
+                        android:layout_width="0dp"
+                        android:layout_weight="11"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:hint="********"
+                        android:inputType="textPassword"
+                        android:background="@android:color/transparent"/>
+                    <ImageView
+                        android:id="@+id/button_show_pass"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/password_visibility"/>
+                </LinearLayout>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@color/colorLines"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="10dp"
+                    android:text="Password minimal berisi 8 karakter terdiri dari angka, huruf, dan huruf kapital" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/button_signup"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/button_bg_rounded_theme"
+                android:gravity="center"
+                android:layout_gravity="right"
+                android:text="Daftar"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:textAlignment="viewEnd"
+                    android:text="Sudah punya akun?" />
+                <TextView
+                    android:id="@id/button_signin"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="  Login" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

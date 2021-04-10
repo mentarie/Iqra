@@ -30,7 +30,7 @@ public class SignUpActivity extends AppCompatActivity {
     EditText etUsername, etEmail, etPassword;
     TextView button_signin, button_signup;
     ProgressDialog loading;
-    ImageView ImgShowHidePassword;
+    ImageView ImgShowHidePassword, button_back;
     String id_user="id_";
 
     Context mContext;
@@ -42,6 +42,14 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        button_back = findViewById(R.id.button_back);
+        ((View) button_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+            }
+        });
 
         mContext = this;
         mApiService = UtilsApi.getAPIService();
@@ -160,6 +168,6 @@ public class SignUpActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        moveTaskToBack(true);
+        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
     }
 }

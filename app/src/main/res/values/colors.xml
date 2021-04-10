@@ -8,5 +8,6 @@
     <color name="colorWhite">#FEFEFE</color>
     <color name="colorLines">#B2B2B2</color>
     <color name="colorBackground">#ECECEC</color>
+    <color name="colorBackgroundPopUp">#A6000000</color>
     <color name="colorSeparator">#DADADA</color>
 </resources>

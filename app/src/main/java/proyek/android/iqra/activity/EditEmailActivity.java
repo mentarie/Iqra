@@ -9,10 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import proyek.android.iqra.R;
+import proyek.android.iqra.apihelper.PreferencesUtility;
 
 public class EditEmailActivity extends AppCompatActivity {
     ImageView button_close;
     TextView textJudul;
+    private String getEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,5 +31,9 @@ public class EditEmailActivity extends AppCompatActivity {
 
         textJudul = (TextView) findViewById(R.id.textToolbar);
         textJudul.setText("Ubah Email");
+
+        getEmail = PreferencesUtility.getUsername(getApplicationContext());
+        TextView textNama = findViewById(R.id.editEmail);
+        textNama.setHint(getEmail);
     }
 }

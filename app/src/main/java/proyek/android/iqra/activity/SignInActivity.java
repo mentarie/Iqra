@@ -32,7 +32,7 @@ public class SignInActivity extends AppCompatActivity {
     EditText etUsername, etPassword;
     TextView button_signin, button_signup;
     ProgressDialog loading;
-    ImageView ImgShowHidePassword;
+    ImageView ImgShowHidePassword, button_back;
 
     Context mContext;
     BaseApiService mApiService;
@@ -46,12 +46,20 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        button_back = findViewById(R.id.button_back);
+        ((View) button_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+            }
+        });
+
         mContext = this;
         mApiService = UtilsApi.getAPIService(); // meng-init yang ada di package apihelper
 
         //Check if UserResponse is Already Logged In
         if(SaveSharedPreference.getLoggedStatus(getApplicationContext())) {
-            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+            Intent intent = new Intent(getApplicationContext(), SplashScreenActivity.class);
             startActivity(intent);
         } else {
             initComponents();
@@ -170,6 +178,6 @@ public class SignInActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        moveTaskToBack(true);
+        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
     }
 }

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activityprofilebeforesignin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    tools:context=".activity.ProfileBeforeSignInActivity">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <include
+            layout="@layout/activity_toolbar_profile"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="140dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginBottom="14dp"
+            android:background="@drawable/button_bg_rounded_corners"
+            android:elevation="10dp"
+            android:weightSum="6"
+            android:padding="12dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Progress: Jilid 1"
+                    android:textSize="12dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="2"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/progressbar_line">
+                <FrameLayout
+                    android:layout_width="30dp"
+                    android:layout_height="10dp"
+                    android:background="@drawable/button_bg_rounded_theme"/>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="24dp"
+                android:background="@color/colorBackground">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pengaturan Akun"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+            <TextView
+                android:id="@+id/button_signin_before"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/button_bg_rounded_theme"
+                android:gravity="center"
+                android:layout_gravity="right"
+                android:text="Masuk Akun"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="24dp"
+                android:layout_marginTop="24dp"
+                android:background="@color/colorBackground">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bantuan"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
+                <!--Pengingat-->
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:orientation="vertical"-->
+                <!--                    android:layout_marginTop="24dp"-->
+                <!--                    android:layout_marginLeft="24dp"-->
+                <!--                    android:layout_marginRight="24dp">-->
+                <!--                    <LinearLayout-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:orientation="horizontal">-->
+                <!--                        <ImageView-->
+                <!--                            android:layout_width="24dp"-->
+                <!--                            android:layout_height="24dp"-->
+                <!--                            android:src="@drawable/ic_baseline_access_alarm"/>-->
+                <!--                        <TextView-->
+                <!--                            android:layout_width="0dp"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:layout_weight="8"-->
+                <!--                            android:text="Pengingat Baca Iqra"-->
+                <!--                            android:layout_gravity="center_vertical"-->
+                <!--                            android:layout_marginLeft="12dp"-->
+                <!--                            android:textSize="14dp"-->
+                <!--                            tools:ignore="RtlCompat"-->
+                <!--                            />-->
+                <!--                        <Switch-->
+                <!--                            android:layout_width="wrap_content"-->
+                <!--                            android:layout_height="wrap_content"/>-->
+                <!--                    </LinearLayout>-->
+                <!--                </LinearLayout>-->
+                <!--                <View-->
+                <!--                    android:layout_width="fill_parent"-->
+                <!--                    android:layout_height="1dp"-->
+                <!--                    android:layout_marginTop="24dp"-->
+                <!--                    android:background="@color/colorLines"/>-->
+                <!--Histori-->
+                <LinearLayout
+                    android:id="@+id/button_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_outline_library_books"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="11"
+                            android:text="Histori Bacaan"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="12dp"
+                            android:textSize="12dp"
+                            tools:ignore="RtlCompat"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@color/colorLines"/>
+                <!--Tentang-->
+                <LinearLayout
+                    android:id="@+id/button_tentang_bukuiqra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginBottom="24dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/logo_iqra"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="11"
+                            android:text="Tentang Buku Iqra"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="12dp"
+                            android:textSize="12dp"
+                            tools:ignore="RtlCompat"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorBackground">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Buku Iqra v 1.0"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -16,6 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activity.PopUpSignInActivity"></activity>
+        <activity android:name=".activity.ProfileBeforeSignInActivity" />
         <activity android:name=".activity.tes_baca.TesBacaActivity_Ebta" />
         <activity android:name=".activity.latihan.LatihanBacaActivity_18" />
         <activity android:name=".activity.latihan.LatihanBacaActivity_17" />

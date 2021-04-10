@@ -9,10 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import proyek.android.iqra.R;
+import proyek.android.iqra.apihelper.PreferencesUtility;
 
 public class EditNameActivity extends AppCompatActivity {
     ImageView button_close;
     TextView textJudul;
+    private String getUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,5 +30,9 @@ public class EditNameActivity extends AppCompatActivity {
         });
         textJudul = (TextView) findViewById(R.id.textToolbar);
         textJudul.setText("Ubah Nama");
+
+        getUsername = PreferencesUtility.getUsername(getApplicationContext());
+        TextView textNama = findViewById(R.id.textnama);
+        textNama.setHint(getUsername);
     }
 }
