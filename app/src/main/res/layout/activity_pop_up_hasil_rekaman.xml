@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_pop_up_sign_in"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_pop_up_hasil_rekaman"
     android:layout_height="match_parent"
     android:gravity="center">
 
@@ -22,42 +21,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="20dp">
-                    <TextView
-                        android:id="@+id/textToolbar"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="10"
-                        android:text=""
-                        android:layout_gravity="center_vertical"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        tools:ignore="RtlCompat" />
-                    <ImageView
-                        android:id="@+id/button_close"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_weight="1"
-                        android:src="@drawable/ic_baseline_close" />
-                </LinearLayout>
                 <TextView
                     android:id="@+id/titleText"
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
-                    android:text="Diperlukan sign in untuk melakukan \n Tes Baca Iqra' Jilid 1"
+                    android:text="Hasil Tes Baca"
                     android:textSize="18sp"
                     android:padding="10dp"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
+                <TextView
+                    android:id="@+id/hasil_test"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="0"
+                    android:textColor="@color/colorWhite"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/illustrasi_signin"/>
+                    android:textStyle="bold"
+                    android:textSize="48sp"
+                    android:padding="10dp"
+                    android:background="@drawable/button_bg_rounded_status_process"/>
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="*Nilai minimal untuk lulus adalah 50"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18sp"
+                    android:padding="10dp"/>
                 <TextView
                     android:id="@+id/button_signin_before"
                     android:layout_width="match_parent"
@@ -66,7 +60,7 @@
                     android:gravity="center"
                     android:layout_marginTop="20dp"
                     android:layout_gravity="right"
-                    android:text="Masuk Akun"
+                    android:text="Lanjutkan Tes Baca"
                     android:textAlignment="center"
                     android:textColor="#fff"
                     android:textSize="18dp"
@@ -74,4 +68,5 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
+
 </FrameLayout>

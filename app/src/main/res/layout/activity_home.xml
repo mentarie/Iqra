@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".activity.HomeActivity">
 
-    <include layout="@layout/activity_toolbar_home"/>
+    <include layout="@layout/toolbar_home"/>
 
     <LinearLayout
         android:layout_width="match_parent"

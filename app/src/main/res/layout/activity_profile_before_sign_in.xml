@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <include
-            layout="@layout/activity_toolbar_profile"/>
+            layout="@layout/toolbar_profile"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

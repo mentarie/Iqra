@@ -3,39 +3,51 @@ package proyek.android.iqra.activity.tes_baca;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.Handler;
+import android.util.ArrayMap;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import proyek.android.iqra.R;
+import proyek.android.iqra.activity.HomeActivity;
 import proyek.android.iqra.activity.Pengantar1Activity;
+import proyek.android.iqra.activity.SignInActivity;
+import proyek.android.iqra.activity.SplashScreenActivity;
+import proyek.android.iqra.adapter.TesBacaAdapter;
+import proyek.android.iqra.model.TesBacaModel;
 
 import static android.Manifest.*;
 import static java.security.AccessController.getContext;
 
 public class TesBacaActivity extends AppCompatActivity {
     ImageView button_back;
+    ImageView button_next_page;
     TextView textJudul;
-    LinearLayout baca_j1_h18_1, baca_j1_h18_2, baca_j1_h18_3, baca_j1_h18_4, baca_j1_h18_5, baca_j1_h18_6, baca_j1_h18_7, baca_j1_h18_8, baca_j1_h18_9, baca_j1_h18_10, baca_j1_h18_11, baca_j1_h18_12, baca_j1_h18_13, baca_j1_h18_14;
-    ImageView button_next;
-    Boolean isRecording = false;
 
-    private int PERMISSION_CODE = 1000;
     private MediaRecorder mediaRecorder;
-    private String recordFile;
-    private String judul;
+    private String path;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,38 +58,164 @@ public class TesBacaActivity extends AppCompatActivity {
         textJudul.setText("Jilid 1 : Tes Baca");
 
         button_back = findViewById(R.id.button_back);
-        ((View) button_back).setOnClickListener(new View.OnClickListener() {
+        button_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                startActivity(new Intent(getApplicationContext(),Pengantar1Activity.class));
             }
         });
 
-        baca_j1_h18_1 = findViewById(R.id.baca_j1_h18_1);
-        baca_j1_h18_1.setOnClickListener(new View.OnClickListener(){
+        button_next_page = findViewById(R.id.j1_h18_n);
+        button_next_page.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if(checkPermissionFromDevice()){
-//
-//                } else {
-//                    requestPermissions();
-//                }
-//                if (isRecording){
-//                    //Stop recording
-//                    stopRecording(baca_j1_h1_1);
-//                    isRecording = false;
-//                } else {
-//                    //Start recording
-//                    if(checkPermission()){
-//                        judul = "baca_j1_h1_1";
-//                        Log.d("sebelum start recording", judul);
-//
-//                        startRecording(judul, baca_j1_h1_1);
-//                        isRecording = true;
-//                    }
-//                }
+                startActivity(new Intent(getApplicationContext(),TesBacaActivity_Ebta.class));
             }
         });
+
+        //permission
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)!=PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[]{
+                    Manifest.permission.RECORD_AUDIO,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+            }, 111);
+        }
+
+        //recycleview
+        RecyclerView item_recycleview_tesbaca = findViewById(R.id.item_recycleview_tesbaca);
+        ArrayList<TesBacaModel> dataList;
+        dataList = new ArrayList<>();
+        dataList.add(new TesBacaModel(
+                1,
+                "1",
+                getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_1", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                ));
+        dataList.add(new TesBacaModel(
+                2,
+                "2",
+                getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_2", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                ));
+        dataList.add(new TesBacaModel(
+                3,
+                "3",
+                getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_3", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                ));
+        dataList.add(new TesBacaModel(
+                4,
+                "4",
+                getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_4", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                ));
+        dataList.add(new TesBacaModel(
+                5,
+                "5",
+                getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_5", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                ));
+        dataList.add(new TesBacaModel(
+                6,
+                "6",
+                getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_6", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                ));
+        dataList.add(new TesBacaModel(
+                7,
+                "7",
+                getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_7", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                ));
+        dataList.add(new TesBacaModel(
+                8,
+                "8",
+                getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_8", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                ));
+        dataList.add(new TesBacaModel(
+                9,
+                "9",
+                getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_9", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                ));
+        dataList.add(new TesBacaModel(
+                10,
+                "10",
+                getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_10", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                ));
+        dataList.add(new TesBacaModel(
+                11,
+                "11",
+                getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_11", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                ));
+        dataList.add(new TesBacaModel(
+                12,
+                "12",
+                getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_12", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                ));
+        dataList.add(new TesBacaModel(
+                13,
+                "13",
+                getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_12", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                ));
+        dataList.add(new TesBacaModel(
+                14,
+                "14",
+                getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_12", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                ));
+        TesBacaAdapter adapter;
+        adapter = new TesBacaAdapter(dataList);
+        RecyclerView.LayoutManager layout_manager = new LinearLayoutManager(getApplicationContext());
+        item_recycleview_tesbaca.setLayoutManager(layout_manager);
+        item_recycleview_tesbaca.setAdapter(adapter);
     }
 
     private boolean checkPermissionFromDevice() {
@@ -87,40 +225,71 @@ public class TesBacaActivity extends AppCompatActivity {
                 record_audio_result == PackageManager.PERMISSION_GRANTED;
     }
 
-    private void requestPermissions() {
-       ActivityCompat.requestPermissions(this, new String[]{
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.RECORD_AUDIO
-        }, PERMISSION_CODE);
-    }
+    public void recordAudio (final LinearLayout line, final ImageView icon, String file_name){
+        //deklarasi path penyimpanan
+        path = Environment.getExternalStorageDirectory().toString()+"/"+file_name+".3gp";
 
-    private void startRecording(String judul, LinearLayout ll) {
-        String recordPath = this.getExternalFilesDir("/").getAbsolutePath();
-        recordFile = judul.concat(".3gp");
-        Log.d("start recording", recordFile);
+        //ganti background saat merekam
+        line.setBackgroundResource(R.drawable.button_bg_circle_line_red);
+        icon.setBackgroundResource(R.drawable.ic_baseline_stop);
 
-        mediaRecorder = new MediaRecorder();
+        //start record
+        mediaRecorder=new MediaRecorder();
         mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
         mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-        mediaRecorder.setOutputFile(recordPath + "/" + recordFile);
-        mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+        mediaRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
+        mediaRecorder.setOutputFile(path);
 
         try {
             mediaRecorder.prepare();
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
-        ll.setBackgroundResource(R.drawable.button_bg_rounded_corners_line);
         mediaRecorder.start();
+
+        //stop record
+        line.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mediaRecorder.stop();
+                line.setBackgroundResource(R.drawable.button_bg_circle_disabled_line);
+                icon.setBackgroundResource(R.drawable.ic_baseline_mic_disabled);
+                //showPopupWindowUpload(v);
+            }
+        });
     }
 
-    private void stopRecording(LinearLayout ll) {
-        ll.setBackgroundResource(R.drawable.button_bg_rounded_corners);
-        mediaRecorder.stop();
-        mediaRecorder.reset();
-        mediaRecorder.release();
-        mediaRecorder = null;
+    private void showPopupWindowUpload(final View view) {
+        LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.activity_pop_up_uploadsuara, null);
+
+        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int height = LinearLayout.LayoutParams.MATCH_PARENT;
+
+        boolean focusable = true;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        int waktu_loading = 4000;
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                showPopupWindowHasil(view);
+                finish();
+            }
+        }, waktu_loading);
+    }
+
+    private void showPopupWindowHasil(View view) {
+        LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.activity_pop_up_hasil_rekaman, null);
+
+        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int height = LinearLayout.LayoutParams.MATCH_PARENT;
+
+        boolean focusable = true;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
     }
 
     public void onBackPressed(){

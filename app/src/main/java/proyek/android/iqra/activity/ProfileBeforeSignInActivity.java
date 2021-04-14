@@ -41,6 +41,7 @@ public class ProfileBeforeSignInActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public void onBackPressed() {
         startActivity(new Intent(getApplicationContext(),HomeActivity.class));

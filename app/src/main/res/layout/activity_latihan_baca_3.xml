@@ -10,7 +10,7 @@
     tools:context=".activity.latihan.LatihanBacaActivity_3">
     <include
         android:id="@+id/include"
-        layout="@layout/activity_toolbar_regular"/>
+        layout="@layout/toolbar_regular"/>
     <ScrollView
         android:id="@+id/scrollView3"
         app:layout_constraintTop_toBottomOf="@+id/include"

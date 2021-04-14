@@ -16,9 +16,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.PopUpSignInActivity"></activity>
         <activity android:name=".activity.ProfileBeforeSignInActivity" />
+        <activity android:name=".activity.tes_baca.TesBacaInformationActivity" />
         <activity android:name=".activity.tes_baca.TesBacaActivity_Ebta" />
+        <activity android:name=".activity.tes_baca.TesBacaActivity" />
         <activity android:name=".activity.latihan.LatihanBacaActivity_18" />
         <activity android:name=".activity.latihan.LatihanBacaActivity_17" />
         <activity android:name=".activity.latihan.LatihanBacaActivity_16" />
@@ -36,24 +37,17 @@
         <activity android:name=".activity.latihan.LatihanBacaActivity_4" />
         <activity android:name=".activity.latihan.LatihanBacaActivity_3" />
         <activity android:name=".activity.latihan.LatihanBacaActivity_2" />
+        <activity android:name=".activity.latihan.LatihanBacaActivity" />
         <activity android:name=".activity.HistoryActivity" />
         <activity android:name=".activity.AboutActivity" />
-        <activity android:name=".activity.tes_baca.TesBacaActivity" />
         <activity android:name=".activity.EditEmailActivity" />
         <activity android:name=".activity.EditPasswordActivity" />
         <activity android:name=".activity.EditNameActivity" />
-        <activity android:name=".ToolbarProfile" />
         <activity android:name=".activity.ProfileActivity" />
         <activity android:name=".activity.SignInActivity" />
         <activity android:name=".activity.SignUpActivity" />
-        <activity android:name=".activity.latihan.LatihanBacaActivity" />
         <activity android:name=".activity.Pengantar1Activity" />
         <activity android:name=".activity.HomeActivity" />
-        <activity android:name=".ToolbarRegularHelp" />
-        <activity android:name=".ToolbarEditor" />
-        <activity android:name=".ToolbarLatihan" />
-        <activity android:name=".ToolbarRegular" />
-        <activity android:name=".ToolbarHome" />
         <activity android:name=".activity.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -14,8 +14,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import proyek.android.iqra.R;
+import proyek.android.iqra.activity.tes_baca.TesBacaInformationActivity;
 import proyek.android.iqra.activity.latihan.LatihanBacaActivity;
-import proyek.android.iqra.activity.tes_baca.TesBacaActivity;
 import proyek.android.iqra.apihelper.SaveSharedPreference;
 
 public class Pengantar1Activity extends AppCompatActivity {
@@ -50,7 +50,7 @@ public class Pengantar1Activity extends AppCompatActivity {
         tes_baca_jilid1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if (SaveSharedPreference.getLoggedStatus(getApplicationContext())){
-                    Intent jilid1 = new Intent(Pengantar1Activity.this, TesBacaActivity.class);
+                    Intent jilid1 = new Intent(Pengantar1Activity.this, TesBacaInformationActivity.class);
                     startActivity(jilid1);
                 } else {
                     showPopupWindow(v);

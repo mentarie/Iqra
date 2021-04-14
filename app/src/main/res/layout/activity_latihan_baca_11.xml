@@ -11,7 +11,7 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/activity_toolbar_regular"/>
+        layout="@layout/toolbar_regular"/>
 
     <ScrollView
         android:id="@+id/scrollView3"

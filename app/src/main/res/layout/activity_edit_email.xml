@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".activity.EditEmailActivity">
     <include
-        layout="@layout/activity_toolbar_editor"/>
+        layout="@layout/toolbar_editor"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
