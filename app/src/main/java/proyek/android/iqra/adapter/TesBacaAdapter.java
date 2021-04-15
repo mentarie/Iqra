@@ -11,16 +11,21 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 import proyek.android.iqra.R;
+import proyek.android.iqra.activity.tes_baca.TesBacaActivity;
 import proyek.android.iqra.model.TesBacaModel;
 
 import static android.view.View.*;
 
 public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHolder> {
     private ArrayList<TesBacaModel> dataList;
-    private Context context;
+    TesBacaActivity tesBacaActivity = new TesBacaActivity();
+    String file_name;
 
     public TesBacaAdapter(ArrayList<TesBacaModel> dataList) {
         this.dataList = dataList;
@@ -34,7 +39,7 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         TesBacaModel model = dataList.get(position);
         holder.Id=model.getId();
         holder.number.setText(model.getNumber());
@@ -43,6 +48,21 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
         holder.rekamHasil.setBackgroundResource(model.getRekamHasil());
         holder.rekamLine.setBackgroundResource(model.getRekamLine());
         holder.rekamIcon.setBackgroundResource(model.getRekamIcon());
+        holder.bacaanId=model.getBacaanId();
+
+        //set onclick rekam
+        holder.rekamLine.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                file_name = String.valueOf(holder.bacaanId);
+                LinearLayout rekamLine = holder.rekamLine;
+                ImageView rekamIcon = holder.rekamIcon;
+                holder.rekamIcon.setImageResource(android.R.color.transparent);
+                Log.d("nama file",file_name);
+
+                ((tesBacaActivity)).recordAudio(rekamLine,rekamIcon, file_name);
+            }
+        });
     }
 
     @Override
@@ -51,28 +71,21 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
     }
 
 
-    class ViewHolder  extends RecyclerView.ViewHolder implements View.OnClickListener  {
+    class ViewHolder  extends RecyclerView.ViewHolder  {
         int Id;
+        String bacaanId;
         LinearLayout numberColor, rekamLine;
         ImageView imageSource, rekamIcon;
         TextView number, rekamHasil;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
             numberColor = itemView.findViewById(R.id.numberColor);
             number = itemView.findViewById(R.id.number);
             imageSource = itemView.findViewById(R.id.imageSource);
             rekamHasil = itemView.findViewById(R.id.rekamHasil);
             rekamLine = itemView.findViewById(R.id.rekamLine);
             rekamIcon = itemView.findViewById(R.id.rekamIcon);
-        }
-
-        @Override
-        public void onClick(View v) {
-            if (Id==3){
-                Log.d("id", String.valueOf(Id));
-            }
         }
     }
 }

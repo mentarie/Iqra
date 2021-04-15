@@ -6,9 +6,9 @@ import android.widget.TextView;
 
 public class TesBacaModel{
 	private int Id, numberColor, imageSource, rekamHasil, rekamLine, rekamIcon;
-	private String number;
+	private String number, bacaanId;
 
-	public TesBacaModel(Integer Id, String number, Integer numberColor, Integer imageSource, Integer rekamHasil, Integer rekamLine, Integer rekamIcon){
+	public TesBacaModel(Integer Id, String number, Integer numberColor, Integer imageSource, Integer rekamHasil, Integer rekamLine, Integer rekamIcon, String bacaanId){
 		this.Id = Id;
 		this.number = number;
 		this.numberColor = numberColor;
@@ -16,6 +16,7 @@ public class TesBacaModel{
 		this.rekamHasil = rekamHasil;
 		this.rekamLine = rekamLine;
 		this.rekamIcon = rekamIcon;
+		this.bacaanId = bacaanId;
 	}
 
 	public Integer getId(){
@@ -38,5 +39,8 @@ public class TesBacaModel{
 	}
 	public Integer getImageSource(){
 		return imageSource;
+	}
+	public String getBacaanId(){
+		return bacaanId;
 	}
 }

@@ -57,7 +57,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_1", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_1"
         ));
         dataList.add(new TesBacaModel(
                 2,
@@ -66,7 +67,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_2", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_2"
         ));
         dataList.add(new TesBacaModel(
                 3,
@@ -75,7 +77,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_3", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_3"
         ));
         dataList.add(new TesBacaModel(
                 4,
@@ -84,7 +87,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_4", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_4"
         ));
         dataList.add(new TesBacaModel(
                 5,
@@ -93,7 +97,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_5", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_5"
         ));
         dataList.add(new TesBacaModel(
                 6,
@@ -102,7 +107,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_6", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_6"
         ));
         dataList.add(new TesBacaModel(
                 7,
@@ -111,7 +117,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_7", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_7"
         ));
         dataList.add(new TesBacaModel(
                 8,
@@ -120,7 +127,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_8", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_8"
         ));
         dataList.add(new TesBacaModel(
                 9,
@@ -129,7 +137,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_9", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_9"
         ));
         dataList.add(new TesBacaModel(
                 10,
@@ -138,7 +147,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_10", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_10"
         ));
         dataList.add(new TesBacaModel(
                 11,
@@ -147,7 +157,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_11", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_11"
         ));
         dataList.add(new TesBacaModel(
                 12,
@@ -156,7 +167,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_12", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_12"
         ));
         dataList.add(new TesBacaModel(
                 13,
@@ -165,7 +177,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_13", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_13"
         ));
         dataList.add(new TesBacaModel(
                 14,
@@ -174,7 +187,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_14", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_14"
         ));
         dataList.add(new TesBacaModel(
                 15,
@@ -183,7 +197,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_15", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_15"
         ));
         dataList.add(new TesBacaModel(
                 16,
@@ -192,7 +207,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_16", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_16"
         ));
         dataList.add(new TesBacaModel(
                 17,
@@ -201,7 +217,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_17", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_17"
         ));
         dataList.add(new TesBacaModel(
                 18,
@@ -210,7 +227,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_18", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_18"
         ));
         dataList.add(new TesBacaModel(
                 19,
@@ -219,7 +237,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_19", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_19"
         ));
         dataList.add(new TesBacaModel(
                 20,
@@ -228,7 +247,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_20", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_20"
         ));
         dataList.add(new TesBacaModel(
                 21,
@@ -237,7 +257,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_21", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_21"
         ));
         dataList.add(new TesBacaModel(
                 22,
@@ -246,7 +267,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_22", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_22"
         ));
         dataList.add(new TesBacaModel(
                 23,
@@ -255,7 +277,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_23", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_23"
         ));
         dataList.add(new TesBacaModel(
                 24,
@@ -264,7 +287,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_24", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_24"
         ));
         dataList.add(new TesBacaModel(
                 25,
@@ -273,7 +297,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_25", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_25"
         ));
         dataList.add(new TesBacaModel(
                 26,
@@ -282,7 +307,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_26", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_26"
         ));
         dataList.add(new TesBacaModel(
                 27,
@@ -291,7 +317,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_27", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_27"
         ));
         dataList.add(new TesBacaModel(
                 28,
@@ -300,7 +327,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getResources().getIdentifier("jilid1_ebta_28", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
-                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName())
+                getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
+                "jilid1_ebta_28"
         ));
         TesBacaAdapter adapter;
         adapter = new TesBacaAdapter(dataList);
