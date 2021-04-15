@@ -1,17 +1,7 @@
 package proyek.android.iqra.apihelper.signin;
 
-import com.google.gson.annotations.SerializedName;
-
 public class SignInRequest{
-	public SignInRequest(String password, String username) {
-		this.password = password;
-		this.username = username;
-	}
-
-	@SerializedName("password")
 	private String password;
-
-	@SerializedName("username")
 	private String username;
 
 	public void setPassword(String password){

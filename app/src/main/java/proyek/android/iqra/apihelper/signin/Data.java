@@ -1,19 +1,10 @@
 package proyek.android.iqra.apihelper.signin;
 
-import com.google.gson.annotations.SerializedName;
-
 public class Data{
-
-	@SerializedName("access_token")
 	private String accessToken;
-
-	@SerializedName("refresh_token")
 	private String refreshToken;
-
-	@SerializedName("email")
+	private String id;
 	private String email;
-
-	@SerializedName("username")
 	private String username;
 
 	public void setAccessToken(String accessToken){
@@ -30,6 +21,14 @@ public class Data{
 
 	public String getRefreshToken(){
 		return refreshToken;
+	}
+
+	public void setId(String id){
+		this.id = id;
+	}
+
+	public String getId(){
+		return id;
 	}
 
 	public void setEmail(String email){
@@ -54,6 +53,7 @@ public class Data{
 			"Data{" + 
 			"access_token = '" + accessToken + '\'' + 
 			",refresh_token = '" + refreshToken + '\'' + 
+			",id = '" + id + '\'' + 
 			",email = '" + email + '\'' + 
 			",username = '" + username + '\'' + 
 			"}";

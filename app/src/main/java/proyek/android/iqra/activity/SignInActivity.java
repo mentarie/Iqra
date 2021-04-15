@@ -21,8 +21,6 @@ import proyek.android.iqra.R;
 import proyek.android.iqra.apihelper.BaseApiService;
 import proyek.android.iqra.apihelper.PreferencesUtility;
 import proyek.android.iqra.apihelper.SaveSharedPreference;
-import proyek.android.iqra.apihelper.signin.SignInRequest;
-import proyek.android.iqra.apihelper.signin.SignInResponse;
 import proyek.android.iqra.apihelper.UtilsApi;
 import retrofit2.Call;
 import retrofit2.Callback;
