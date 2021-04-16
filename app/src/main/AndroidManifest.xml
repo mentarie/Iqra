@@ -41,7 +41,6 @@
         <activity android:name=".activity.HistoryActivity" />
         <activity android:name=".activity.AboutActivity" />
         <activity android:name=".activity.EditEmailActivity" />
-        <activity android:name=".activity.EditPasswordActivity" />
         <activity android:name=".activity.EditNameActivity" />
         <activity android:name=".activity.ProfileActivity" />
         <activity android:name=".activity.SignInActivity" />

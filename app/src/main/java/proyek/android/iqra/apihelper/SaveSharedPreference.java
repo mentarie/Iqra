@@ -25,12 +25,14 @@ public class SaveSharedPreference {
 
     public static void setUpdateUsername(Context context, boolean loggedIn, String username){
         SharedPreferences.Editor editor = getPreferences(context).edit();
+        editor.putBoolean(LOGGED_IN_PREF, loggedIn);
         editor.putString(KEY_USERNAME, username);
         editor.apply();
     }
 
     public static void setUpdateEmail(Context context, boolean loggedIn, String email){
         SharedPreferences.Editor editor = getPreferences(context).edit();
+        editor.putBoolean(LOGGED_IN_PREF, loggedIn);
         editor.putString(KEY_EMAIL, email);
         editor.apply();
     }

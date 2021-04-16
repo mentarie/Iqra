@@ -70,14 +70,6 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(edit_email);
             }
         });
-        LinearLayout button_password_edit = findViewById(R.id.button_password_edit);
-        button_password_edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent edit_password = new Intent(ProfileActivity.this, EditPasswordActivity.class);
-                startActivity(edit_password);
-            }
-        });
         LinearLayout history = findViewById(R.id.button_history);
         history.setOnClickListener(new View.OnClickListener() {
             @Override

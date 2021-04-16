@@ -76,7 +76,7 @@ public class EditNameActivity extends AppCompatActivity {
         }
     }
 
-    //validate username & password
+    //validate
     private boolean validate(@NotNull EditText editText) {
         if (editText.getText().toString().trim().length() > 0) {
             return true;
