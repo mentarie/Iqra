@@ -22,6 +22,8 @@ import proyek.android.iqra.apihelper.BaseApiService;
 import proyek.android.iqra.apihelper.PreferencesUtility;
 import proyek.android.iqra.apihelper.SaveSharedPreference;
 import proyek.android.iqra.apihelper.UtilsApi;
+import proyek.android.iqra.apihelper.signin.SignInRequest;
+import proyek.android.iqra.apihelper.signin.SignInResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -36,7 +38,7 @@ public class SignInActivity extends AppCompatActivity {
     BaseApiService mApiService;
 
     private boolean isOpenEye = false;
-    private String token, setUsername, setEmail, getUsername, getEmail;
+    private String token, setUsername, setEmail, setId, getUsername, getEmail, getId;
     private boolean flag;
 
     @Override
@@ -139,14 +141,17 @@ public class SignInActivity extends AppCompatActivity {
                     token = response.body().getData().getAccessToken();
                     setUsername = response.body().getData().getUsername();
                     setEmail = response.body().getData().getEmail();
-                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true, setUsername, setEmail);
+                    setId = response.body().getData().getId();
+                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true, setUsername, setEmail, setId);
 
                     PreferencesUtility.saveUsername(setUsername, getApplicationContext());
                     PreferencesUtility.saveEmail(setEmail, getApplicationContext());
+                    PreferencesUtility.saveId(setId, getApplicationContext());
 
                     flag = SaveSharedPreference.getLoggedStatus(getApplicationContext());
                     getUsername = PreferencesUtility.getUsername(getApplicationContext());
                     getEmail = PreferencesUtility.getEmail(getApplicationContext());
+                    getId = PreferencesUtility.getId(getApplicationContext());
 
 //                    Log.d("setUsername", setUsername);
 //                    Log.d("setEmail", setEmail);

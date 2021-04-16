@@ -5,8 +5,7 @@
     android:id="@+id/toolbar_regular_help"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ToolbarRegularHelp">
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

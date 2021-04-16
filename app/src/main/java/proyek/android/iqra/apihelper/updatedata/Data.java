@@ -1,13 +1,10 @@
-package proyek.android.iqra.apihelper.signin;
+package proyek.android.iqra.apihelper.updatedata;
 
-public class SignInRequest{
+public class Data{
 	private String password;
+	private String id;
+	private String email;
 	private String username;
-
-	public SignInRequest(String etUsername, String etPassword) {
-		this.username = etUsername;
-		this.password = etPassword;
-	}
 
 	public void setPassword(String password){
 		this.password = password;
@@ -15,6 +12,22 @@ public class SignInRequest{
 
 	public String getPassword(){
 		return password;
+	}
+
+	public void setId(String id){
+		this.id = id;
+	}
+
+	public String getId(){
+		return id;
+	}
+
+	public void setEmail(String email){
+		this.email = email;
+	}
+
+	public String getEmail(){
+		return email;
 	}
 
 	public void setUsername(String username){
@@ -28,8 +41,10 @@ public class SignInRequest{
 	@Override
  	public String toString(){
 		return 
-			"SignInRequest{" + 
+			"Data{" + 
 			"password = '" + password + '\'' + 
+			",id = '" + id + '\'' + 
+			",email = '" + email + '\'' + 
 			",username = '" + username + '\'' + 
 			"}";
 		}

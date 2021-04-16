@@ -3,7 +3,7 @@ package proyek.android.iqra.apihelper.signup;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class SignUpResponse {
+public class SignUpRequest {
 
     @SerializedName("username")
     @Expose
@@ -21,8 +21,7 @@ public class SignUpResponse {
     @Expose
     private Integer id;
 
-    //public
-    public SignUpResponse(String username, String email, String password, String id_user){
+    public SignUpRequest(String username, String email, String password, String id_user){
         this.username = username;
         this.email = email;
         this.password = password;

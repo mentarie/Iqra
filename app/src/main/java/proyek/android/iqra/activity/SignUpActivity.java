@@ -20,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 import proyek.android.iqra.R;
 import proyek.android.iqra.apihelper.BaseApiService;
-import proyek.android.iqra.apihelper.signup.SignUpResponse;
+import proyek.android.iqra.apihelper.signup.SignUpRequest;
 import proyek.android.iqra.apihelper.UtilsApi;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -123,7 +123,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //parsing
-                SignUpResponse user = new SignUpResponse (
+                SignUpRequest user = new SignUpRequest(
                     etUsername.getText().toString().trim(),
                     etEmail.getText().toString().trim(),
                     etPassword.getText().toString().trim(),
@@ -138,16 +138,16 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
-    private void signUp(SignUpResponse user) {
+    private void signUp(SignUpRequest user) {
         // display a progress dialog
         final ProgressDialog progressDialog = new ProgressDialog(SignUpActivity.this);
         progressDialog.setCancelable(false); // set cancelable to false
         progressDialog.setMessage("Harap Tunggu ..."); // set message
         progressDialog.show(); // show progress dialog
 
-        mApiService.CreateUserHandler(user).enqueue(new Callback<SignUpResponse>() {
+        mApiService.CreateUserHandler(user).enqueue(new Callback<SignUpRequest>() {
             @Override
-            public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
+            public void onResponse(Call<SignUpRequest> call, Response<SignUpRequest> response) {
                 if(response.isSuccessful()) {
                     Log.i("debug", "onResponse: BERHASIL");
                     progressDialog.dismiss();
@@ -158,7 +158,7 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
             @Override
-            public void onFailure(Call<SignUpResponse> call, Throwable t) {
+            public void onFailure(Call<SignUpRequest> call, Throwable t) {
                 Log.d("response", t.getStackTrace().toString());
                 Toast.makeText(mContext, "Koneksi Internet Bermasalah", Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
