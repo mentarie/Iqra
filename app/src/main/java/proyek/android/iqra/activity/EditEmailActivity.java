@@ -12,7 +12,7 @@ import proyek.android.iqra.R;
 import proyek.android.iqra.apihelper.PreferencesUtility;
 
 public class EditEmailActivity extends AppCompatActivity {
-    ImageView button_close;
+    ImageView button_close, button_save;
     TextView textJudul;
     private String getEmail;
 

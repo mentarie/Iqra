@@ -29,7 +29,7 @@ public class EditNameActivity extends AppCompatActivity {
     ImageView button_close, button_save;
     TextView textJudul;
     EditText editNama;
-    String getUsername, getId, getEmail, getPassword, setUsername, setEmail, setPassword;
+    String getId, setUsername;
 
     Context mContext;
     BaseApiService mApiService;

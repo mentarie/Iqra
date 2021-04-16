@@ -22,9 +22,16 @@ public class SaveSharedPreference {
         editor.putString(KEY_ID, id);
         editor.apply();
     }
+
     public static void setUpdateUsername(Context context, boolean loggedIn, String username){
         SharedPreferences.Editor editor = getPreferences(context).edit();
         editor.putString(KEY_USERNAME, username);
+        editor.apply();
+    }
+
+    public static void setUpdateEmail(Context context, boolean loggedIn, String email){
+        SharedPreferences.Editor editor = getPreferences(context).edit();
+        editor.putString(KEY_EMAIL, email);
         editor.apply();
     }
 
