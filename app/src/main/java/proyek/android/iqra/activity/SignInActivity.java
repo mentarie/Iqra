@@ -153,13 +153,6 @@ public class SignInActivity extends AppCompatActivity {
                     getEmail = PreferencesUtility.getEmail(getApplicationContext());
                     getId = PreferencesUtility.getId(getApplicationContext());
 
-//                    Log.d("setUsername", setUsername);
-//                    Log.d("setEmail", setEmail);
-//                    Log.d("data", response.body().getData().toString());
-//                    Log.d("getLoggedStatus", String.valueOf(flag));
-//                    Log.d("getUsername", flag2);
-//                    Log.d("getEmail", flag3);
-
                     //login start main activity
                     Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
                     startActivity(intent);

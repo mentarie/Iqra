@@ -92,7 +92,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Set LoggedIn status to false
                 SaveSharedPreference.setLoggedOut(getApplicationContext(), false);
-                moveTaskToBack(true);
+                startActivity(new Intent(getApplicationContext(),SplashScreenActivity.class));
             }
         });
     }
