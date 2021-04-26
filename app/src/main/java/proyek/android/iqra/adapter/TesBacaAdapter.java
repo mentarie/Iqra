@@ -80,7 +80,7 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
                 //parsing
                 userId = holder.userId;
                 file_name = String.valueOf(holder.bacaanId);
-                submissionId = userId+"_"+file_name;
+                submissionId = userId+"-"+file_name;
                 rekamLine = holder.rekamLine;
                 rekamIcon = holder.rekamIcon;
 
