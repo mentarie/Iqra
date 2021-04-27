@@ -2,6 +2,7 @@ package proyek.android.iqra.apihelper.submission;
 
 public class SubmissionResponse{
 	private int code;
+	private double data;
 	private String status;
 
 	public void setCode(int code){
@@ -10,6 +11,14 @@ public class SubmissionResponse{
 
 	public int getCode(){
 		return code;
+	}
+
+	public void setData(double data){
+		this.data = data;
+	}
+
+	public double getData(){
+		return data;
 	}
 
 	public void setStatus(String status){
@@ -25,6 +34,7 @@ public class SubmissionResponse{
 		return 
 			"SubmissionResponse{" + 
 			"code = '" + code + '\'' + 
+			",data = '" + data + '\'' + 
 			",status = '" + status + '\'' + 
 			"}";
 		}

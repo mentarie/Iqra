@@ -8,30 +8,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.MediaRecorder;
 import android.os.Bundle;
-import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 import proyek.android.iqra.R;
 import proyek.android.iqra.activity.Pengantar1Activity;
 import proyek.android.iqra.adapter.TesBacaAdapter;
 import proyek.android.iqra.apihelper.BaseApiService;
 import proyek.android.iqra.apihelper.UtilsApi;
-import proyek.android.iqra.apihelper.submission.SubmissionResponse;
 import proyek.android.iqra.model.TesBacaModel;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class TesBacaActivity_Ebta extends AppCompatActivity {
     ImageView button_back;

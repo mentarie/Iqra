@@ -1,20 +1,23 @@
 package proyek.android.iqra.adapter;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.media.MediaRecorder;
 import android.os.Environment;
+import android.os.Handler;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
-
-import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,9 +27,9 @@ import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import proyek.android.iqra.R;
+import proyek.android.iqra.activity.SignInActivity;
 import proyek.android.iqra.activity.tes_baca.TesBacaActivity;
 import proyek.android.iqra.apihelper.BaseApiService;
-import proyek.android.iqra.apihelper.PreferencesUtility;
 import proyek.android.iqra.apihelper.UtilsApi;
 import proyek.android.iqra.apihelper.submission.SubmissionResponse;
 import proyek.android.iqra.model.TesBacaModel;
@@ -34,20 +37,20 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static android.view.View.*;
-
 public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHolder> {
     private ArrayList<TesBacaModel> dataList;
     TesBacaActivity tesBacaActivity = new TesBacaActivity();
     String file_name, userId, submissionId;
     LinearLayout rekamLine;
     ImageView rekamIcon;
+    ProgressDialog loading;
 
     Context mContext;
     BaseApiService mApiService;
 
     private MediaRecorder mediaRecorder;
     private String path, getId;
+    private double score;
 
     public TesBacaAdapter(ArrayList<TesBacaModel> dataList) {
         this.dataList = dataList;
@@ -147,12 +150,14 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
                 File filePath = new File(path);
                 Log.d("filepath", String.valueOf(filePath));
 
-                uploadFile(filePath);
+                uploadFile(filePath, v);
             }
         });
     }
 
-    private void uploadFile(File filePath) {
+    private void uploadFile(File filePath, final View v) {
+        showPopupWindowUpload(v);
+
         RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), filePath);
         MultipartBody.Part audio =
                 MultipartBody.Part.createFormData("iqra-file-rekaman", filePath.getName(), requestBody);
@@ -161,7 +166,13 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
             @Override
             public void onResponse(Call<SubmissionResponse> call, Response<SubmissionResponse> response) {
                 if(response.isSuccessful()){
-                    Log.d("Upload", "success");
+                    SubmissionResponse resObj = (SubmissionResponse) response.body();
+                    score = response.body().getData();
+
+                    //bawa hasil score, simpen di hasil akurasi di baris tsb
+                    Log.d("score", String.valueOf(score));
+                    showPopupWindowHasil(v, score);
+
                 } else {
                     Log.d("Upload", "gagal");
                 }
@@ -173,5 +184,50 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
                 Toast.makeText(mContext, "Koneksi Internet Bermasalah", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void showPopupWindowUpload(final View view) {
+        LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.activity_pop_up_uploadsuara, null);
+
+        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int height = LinearLayout.LayoutParams.MATCH_PARENT;
+
+        boolean focusable = true;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        int waktu_loading = 4000;
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                popupWindow.dismiss();
+            }
+        }, waktu_loading);
+    }
+
+    private void showPopupWindowHasil(View view, Double score) {
+        LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.activity_pop_up_hasil_rekaman, null);
+
+        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int height = LinearLayout.LayoutParams.MATCH_PARENT;
+
+        boolean focusable = true;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        TextView hasil_test = (TextView) view.findViewById(R.id.hasil_test);
+        hasil_test.setText(score);
+        Log.d("score",  score.toString());
+
+        TextView button_lanjutkan = (TextView) view.findViewById(R.id.button_lanjutkan);
+        button_lanjutkan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
+
     }
 }

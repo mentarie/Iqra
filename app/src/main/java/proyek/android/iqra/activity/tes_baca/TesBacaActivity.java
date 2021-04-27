@@ -10,54 +10,26 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.media.MediaPlayer;
 import android.media.MediaRecorder;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.FileUtils;
 import android.os.Handler;
-import android.util.ArrayMap;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
-import okhttp3.ResponseBody;
 import proyek.android.iqra.R;
-import proyek.android.iqra.activity.HomeActivity;
 import proyek.android.iqra.activity.Pengantar1Activity;
-import proyek.android.iqra.activity.SignInActivity;
-import proyek.android.iqra.activity.SplashScreenActivity;
 import proyek.android.iqra.adapter.TesBacaAdapter;
 import proyek.android.iqra.apihelper.BaseApiService;
 import proyek.android.iqra.apihelper.PreferencesUtility;
-import proyek.android.iqra.apihelper.SaveSharedPreference;
 import proyek.android.iqra.apihelper.UtilsApi;
-import proyek.android.iqra.apihelper.signin.SignInResponse;
-import proyek.android.iqra.apihelper.submission.SubmissionResponse;
 import proyek.android.iqra.model.TesBacaModel;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-import static android.Manifest.*;
-import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_AUDIO;
-import static java.security.AccessController.getContext;
 
 public class TesBacaActivity extends AppCompatActivity {
     ImageView button_back;
@@ -248,7 +220,7 @@ public class TesBacaActivity extends AppCompatActivity {
                 13,
                 "13",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
-                getResources().getIdentifier("jilid1_hal18_12", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_13", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
@@ -259,7 +231,7 @@ public class TesBacaActivity extends AppCompatActivity {
                 14,
                 "14",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
-                getResources().getIdentifier("jilid1_hal18_12", "drawable", this.getPackageName()),
+                getResources().getIdentifier("jilid1_hal18_14", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
@@ -279,39 +251,6 @@ public class TesBacaActivity extends AppCompatActivity {
         int record_audio_result = ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO);
         return write_external_storage_result == PackageManager.PERMISSION_GRANTED &&
                 record_audio_result == PackageManager.PERMISSION_GRANTED;
-    }
-
-    private void showPopupWindowUpload(final View view) {
-        LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.activity_pop_up_uploadsuara, null);
-
-        int width = LinearLayout.LayoutParams.MATCH_PARENT;
-        int height = LinearLayout.LayoutParams.MATCH_PARENT;
-
-        boolean focusable = true;
-        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-
-        int waktu_loading = 4000;
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                showPopupWindowHasil(view);
-                finish();
-            }
-        }, waktu_loading);
-    }
-
-    private void showPopupWindowHasil(View view) {
-        LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.activity_pop_up_hasil_rekaman, null);
-
-        int width = LinearLayout.LayoutParams.MATCH_PARENT;
-        int height = LinearLayout.LayoutParams.MATCH_PARENT;
-
-        boolean focusable = true;
-        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
     }
 
     public void onBackPressed(){

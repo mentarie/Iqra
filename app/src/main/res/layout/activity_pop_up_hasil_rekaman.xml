@@ -44,16 +44,7 @@
                     android:padding="10dp"
                     android:background="@drawable/button_bg_rounded_status_process"/>
                 <TextView
-                    android:layout_gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:text="*Nilai minimal untuk lulus adalah 50"
-                    android:layout_marginTop="20dp"
-                    android:textSize="18sp"
-                    android:padding="10dp"/>
-                <TextView
-                    android:id="@+id/button_signin_before"
+                    android:id="@+id/button_lanjutkan"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:background="@drawable/button_bg_rounded_theme"
