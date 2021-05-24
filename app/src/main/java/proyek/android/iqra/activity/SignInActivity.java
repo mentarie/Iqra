@@ -156,7 +156,6 @@ public class SignInActivity extends AppCompatActivity {
                     //login start main activity
                     Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
                     startActivity(intent);
-
                 } else {
                     Toast.makeText(SignInActivity.this, "Error! Please try again!", Toast.LENGTH_SHORT).show();
                     progressDialog.setCancelable(true);

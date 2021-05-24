@@ -8,18 +8,34 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.MediaRecorder;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.File;
 import java.util.ArrayList;
 
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import proyek.android.iqra.R;
 import proyek.android.iqra.activity.Pengantar1Activity;
 import proyek.android.iqra.adapter.TesBacaAdapter;
 import proyek.android.iqra.apihelper.BaseApiService;
+import proyek.android.iqra.apihelper.Callback;
+import proyek.android.iqra.apihelper.PreferencesUtility;
 import proyek.android.iqra.apihelper.UtilsApi;
+import proyek.android.iqra.apihelper.submission.SubmissionResponse;
 import proyek.android.iqra.model.TesBacaModel;
+import retrofit2.Call;
+import retrofit2.Response;
 
 public class TesBacaActivity_Ebta extends AppCompatActivity {
     ImageView button_back;
@@ -30,7 +46,20 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
     BaseApiService mApiService;
 
     private MediaRecorder mediaRecorder;
-    private String path, getId;
+    private String path;
+    private int getId;
+
+    private Callback<File> onClickCallback = new Callback<File>() {
+        @Override
+        public void callback(File file) {
+            uploadFile(file, new View(getBaseContext()));
+        }
+
+        @Override
+        public void error() {
+
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +87,9 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
 
         mContext = this;
         mApiService = UtilsApi.getAPIService();
+
+        //getId user
+        getId = Integer.parseInt(PreferencesUtility.getId(getApplicationContext()));
 
         //recycleview
         RecyclerView item_recycleview_tesbaca = findViewById(R.id.item_recycleview_tesbaca);
@@ -372,7 +404,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         TesBacaAdapter adapter;
-        adapter = new TesBacaAdapter(dataList);
+        adapter = new TesBacaAdapter(dataList, onClickCallback);
         RecyclerView.LayoutManager layout_manager = new LinearLayoutManager(getApplicationContext());
         item_recycleview_tesbaca.setLayoutManager(layout_manager);
         item_recycleview_tesbaca.setAdapter(adapter);
@@ -381,5 +413,51 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
     public void onBackPressed(){
         startActivity(new Intent(getApplicationContext(), Pengantar1Activity.class));
         finish();
+    }
+
+    private void uploadFile(File filePath, final View v) {
+        showPopupWindowUpload(v);
+
+        RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), filePath);
+        MultipartBody.Part audio =
+                MultipartBody.Part.createFormData("iqra-file-rekaman", filePath.getName(), requestBody);
+
+        mApiService.UploadFileHandler(audio).enqueue(new retrofit2.Callback<SubmissionResponse>() {
+            @Override
+            public void onResponse(Call<SubmissionResponse> call, Response<SubmissionResponse> response) {
+                if(response.isSuccessful()){
+
+                } else {
+                    Log.d("Upload", "gagal");
+                }
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                Log.d("response", t.getStackTrace().toString());
+                Toast.makeText(mContext, "Koneksi Internet Bermasalah", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void showPopupWindowUpload(final View view) {
+        LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(
+                view.getContext().LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.activity_pop_up_uploadsuara, null);
+
+        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int height = LinearLayout.LayoutParams.MATCH_PARENT;
+
+        boolean focusable = true;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        int waktu_loading = 10000;
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                popupWindow.dismiss();
+            }
+        }, waktu_loading);
     }
 }

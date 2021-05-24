@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import proyek.android.iqra.R;
+import proyek.android.iqra.activity.MainActivity;
 import proyek.android.iqra.activity.Pengantar1Activity;
 
 public class TesBacaInformationActivity extends AppCompatActivity {
