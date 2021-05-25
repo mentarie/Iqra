@@ -1,8 +1,11 @@
 package proyek.android.iqra.apihelper.submission;
 
+import com.google.gson.annotations.SerializedName;
+
 public class SubmissionResponse{
 	private int code;
-	private Data data;
+	@SerializedName("data")
+	private SubmissionModel data;
 	private String status;
 
 	public void setCode(int code){
@@ -13,11 +16,11 @@ public class SubmissionResponse{
 		return code;
 	}
 
-	public void setData(Data data){
-		this.data = data;
+	public void setSubmissionModel(SubmissionModel submissionModel){
+		this.data = submissionModel;
 	}
 
-	public Data getData(){
+	public SubmissionModel getSubmissionModel(){
 		return data;
 	}
 
@@ -34,7 +37,7 @@ public class SubmissionResponse{
 		return 
 			"SubmissionResponse{" + 
 			"code = '" + code + '\'' + 
-			",data = '" + data + '\'' + 
+			",data = '" + data + '\'' +
 			",status = '" + status + '\'' + 
 			"}";
 		}

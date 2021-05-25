@@ -2,20 +2,15 @@ package proyek.android.iqra.adapter;
 
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.media.MediaRecorder;
 import android.os.Environment;
-import android.os.Handler;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,21 +18,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import okhttp3.MediaType;
-import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 import proyek.android.iqra.R;
-import proyek.android.iqra.activity.SignInActivity;
 import proyek.android.iqra.activity.tes_baca.TesBacaActivity;
 import proyek.android.iqra.apihelper.BaseApiService;
 import proyek.android.iqra.apihelper.UtilsApi;
-import proyek.android.iqra.apihelper.allsubmissiondata.AllSubmissionResponse;
-import proyek.android.iqra.apihelper.submission.SubmissionResponse;
-import proyek.android.iqra.model.SubmissionModel;
+import proyek.android.iqra.apihelper.submission.SubmissionModel;
 import proyek.android.iqra.model.TesBacaModel;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHolder> {
     private ArrayList<TesBacaModel> dataList;
@@ -71,19 +57,19 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        TesBacaModel model = dataList.get(position);
+        final TesBacaModel model = dataList.get(position);
         //parsing
-        Integer id = model.getUserId();
+//        Integer id = model.getUserId();
 
-        holder.Id=model.getId();
+//        holder.Id=model.getId();
         holder.number.setText(model.getNumber());
         holder.numberColor.setBackgroundResource(model.getNumberColor());
         holder.imageSource.setImageResource(model.getImageSource());
-        holder.rekamHasil.setBackgroundResource(model.getRekamHasil());
+        holder.rekamHasil.setText(model.getRekamHasil().toString());
         holder.rekamLine.setBackgroundResource(model.getRekamLine());
         holder.rekamIcon.setBackgroundResource(model.getRekamIcon());
-        holder.bacaanId=model.getBacaanId();
-        holder.userId=model.getUserId();
+//        holder.bacaanId=model.getBacaanId();
+//        holder.userId=model.getUserId();
 
 
         //set onclick rekam
@@ -91,8 +77,8 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
             @Override
             public void onClick(View v) {
                 //parsing
-                userId = holder.userId;
-                file_name = String.valueOf(holder.bacaanId);
+                userId = model.getUserId();
+                file_name = String.valueOf(model.getBacaanId());
                 submissionId = userId+"-"+file_name;
                 rekamLine = holder.rekamLine;
                 rekamIcon = holder.rekamIcon;
@@ -109,9 +95,6 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
     }
 
     class ViewHolder  extends RecyclerView.ViewHolder  {
-        int Id;
-        String bacaanId;
-        Integer userId;
         LinearLayout numberColor, rekamLine;
         ImageView imageSource, rekamIcon;
         TextView number, rekamHasil;

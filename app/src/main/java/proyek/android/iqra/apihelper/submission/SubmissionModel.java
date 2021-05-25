@@ -1,16 +1,30 @@
 package proyek.android.iqra.apihelper.submission;
 
-public class Data{
-	private int idIqraRefer;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+public class SubmissionModel {
+	@SerializedName("id_iqra_refer")
+	@Expose
+	private Integer idIqraRefer;
 	private String createdAt;
-	private double accuracy;
+	private Double accuracy;
 	private String actualResult;
-	private int iD;
-	private int id;
+	private Integer iD;
+	private Integer id;
 	private Object deletedAt;
 	private String updatedAt;
-	private int idUserRefer;
+	private Integer idUserRefer;
 	private String expectedResult;
+
+	public SubmissionModel(Integer id, Integer idIqraRefer, Integer idUserRefer, Double accuracy, String actualResult, String expectedResult){
+		this.id = id;
+		this.idUserRefer = idUserRefer;
+		this.idIqraRefer = idIqraRefer;
+		this.accuracy = accuracy;
+		this.actualResult = actualResult;
+		this.expectedResult = expectedResult;
+	}
 
 	public void setIdIqraRefer(int idIqraRefer){
 		this.idIqraRefer = idIqraRefer;

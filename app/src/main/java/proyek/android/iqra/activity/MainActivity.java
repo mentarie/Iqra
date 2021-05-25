@@ -8,17 +8,14 @@ import android.os.Bundle;
 import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import proyek.android.iqra.R;
 import proyek.android.iqra.adapter.DataAdapter;
 import proyek.android.iqra.apihelper.BaseApiService;
-import proyek.android.iqra.apihelper.JSONResponse;
 import proyek.android.iqra.apihelper.PreferencesUtility;
 import proyek.android.iqra.apihelper.SResponse;
 import proyek.android.iqra.apihelper.SResponse.Data;
-import proyek.android.iqra.model.AndroidVersion;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

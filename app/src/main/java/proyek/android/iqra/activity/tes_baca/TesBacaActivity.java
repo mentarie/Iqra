@@ -36,7 +36,7 @@ import proyek.android.iqra.apihelper.BaseApiService;
 import proyek.android.iqra.apihelper.Callback;
 import proyek.android.iqra.apihelper.PreferencesUtility;
 import proyek.android.iqra.apihelper.UtilsApi;
-import proyek.android.iqra.apihelper.allsubmissiondata.AllSubmissionResponse;
+import proyek.android.iqra.apihelper.submission.SubmissionModel;
 import proyek.android.iqra.apihelper.submission.SubmissionResponse;
 import proyek.android.iqra.model.TesBacaModel;
 import retrofit2.Call;
@@ -53,6 +53,8 @@ public class TesBacaActivity extends AppCompatActivity {
     private MediaRecorder mediaRecorder;
     private String path;
     private Integer getId;
+    private ArrayList<TesBacaModel> dataList;
+    private TesBacaAdapter adapter;
 
     private final Callback<File> onClickCallback = new Callback<File>() {
         @Override
@@ -107,14 +109,14 @@ public class TesBacaActivity extends AppCompatActivity {
 
         //recycleview
         RecyclerView item_recycleview_tesbaca = findViewById(R.id.item_recycleview_tesbaca);
-        ArrayList<TesBacaModel> dataList;
+
         dataList = new ArrayList<>();
         dataList.add(new TesBacaModel(
                 1,
                 "1",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_hal18_1", "drawable", this.getPackageName()),
-                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                0.0,
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
                 "jilid1_hal18_1",
@@ -125,7 +127,7 @@ public class TesBacaActivity extends AppCompatActivity {
                 "2",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_hal18_2", "drawable", this.getPackageName()),
-                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                0.0,
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
                 "jilid1_hal18_2",
@@ -136,7 +138,7 @@ public class TesBacaActivity extends AppCompatActivity {
                 "3",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_hal18_3", "drawable", this.getPackageName()),
-                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                0.0,
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
                 "jilid1_hal18_3",
@@ -147,7 +149,7 @@ public class TesBacaActivity extends AppCompatActivity {
                 "4",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_hal18_4", "drawable", this.getPackageName()),
-                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                0.0,
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
                 "jilid1_hal18_4",
@@ -158,7 +160,7 @@ public class TesBacaActivity extends AppCompatActivity {
                 "5",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_hal18_5", "drawable", this.getPackageName()),
-                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                0.0,
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
                 "jilid1_hal18_5",
@@ -169,7 +171,7 @@ public class TesBacaActivity extends AppCompatActivity {
                 "6",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_hal18_6", "drawable", this.getPackageName()),
-                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                0.0,
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
                 "jilid1_hal18_6",
@@ -180,7 +182,7 @@ public class TesBacaActivity extends AppCompatActivity {
                 "7",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_hal18_7", "drawable", this.getPackageName()),
-                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                0.0,
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
                 "jilid1_hal18_7",
@@ -191,7 +193,7 @@ public class TesBacaActivity extends AppCompatActivity {
                 "8",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_hal18_8", "drawable", this.getPackageName()),
-                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                0.0,
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
                 "jilid1_hal18_8",
@@ -202,7 +204,7 @@ public class TesBacaActivity extends AppCompatActivity {
                 "9",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_hal18_9", "drawable", this.getPackageName()),
-                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                0.0,
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
                 "jilid1_hal18_9",
@@ -213,7 +215,7 @@ public class TesBacaActivity extends AppCompatActivity {
                 "10",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_hal18_10", "drawable", this.getPackageName()),
-                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                0.0,
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
                 "jilid1_hal18_10",
@@ -224,7 +226,7 @@ public class TesBacaActivity extends AppCompatActivity {
                 "11",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_hal18_11", "drawable", this.getPackageName()),
-                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                0.0,
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
                 "jilid1_hal18_11",
@@ -235,7 +237,7 @@ public class TesBacaActivity extends AppCompatActivity {
                 "12",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_hal18_12", "drawable", this.getPackageName()),
-                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                0.0,
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
                 "jilid1_hal18_12",
@@ -246,7 +248,7 @@ public class TesBacaActivity extends AppCompatActivity {
                 "13",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_hal18_13", "drawable", this.getPackageName()),
-                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                0.0,
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
                 "jilid1_hal18_13",
@@ -257,14 +259,14 @@ public class TesBacaActivity extends AppCompatActivity {
                 "14",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_hal18_14", "drawable", this.getPackageName()),
-                getResources().getIdentifier("button_bg_rounded_disabled", "drawable", this.getPackageName()),
+                0.0,
                 getResources().getIdentifier("button_bg_circle_disabled_line", "drawable", this.getPackageName()),
                 getResources().getIdentifier("ic_baseline_mic_disabled", "drawable", this.getPackageName()),
                 "jilid1_hal18_14",
                 getId
                 ));
 
-        TesBacaAdapter adapter;
+
         adapter = new TesBacaAdapter(dataList, onClickCallback);
         RecyclerView.LayoutManager layout_manager = new LinearLayoutManager(getApplicationContext());
         item_recycleview_tesbaca.setLayoutManager(layout_manager);
@@ -278,30 +280,6 @@ public class TesBacaActivity extends AppCompatActivity {
         return write_external_storage_result == PackageManager.PERMISSION_GRANTED &&
                 record_audio_result == PackageManager.PERMISSION_GRANTED;
     }
-
-    //ambil data dari database
-//    public void getSubmissionData(Integer getId){
-//        mApiService = UtilsApi.getAPIService();
-//        mApiService.GetSubmissionsHandler(getId).enqueue(new Callback<AllSubmissionResponse>() {
-//            @Override
-//            public void onResponse(Call<AllSubmissionResponse> call, Response<AllSubmissionResponse> response) {
-//                if(response.isSuccessful()){
-//                    AllSubmissionResponse resObj = (AllSubmissionResponse) response.body().getData();
-//                    //belum tau
-//                    Double score = Double.valueOf(resObj.getData().indexOf(1));
-//                    Log.d("score", String.valueOf(score));
-//                } else {
-//                    Log.d("Data Submission", "Data Submission Gagal Diambil");
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call call, Throwable t) {
-//                Log.d("response", t.getStackTrace().toString());
-//                Toast.makeText(mContext, "Koneksi Internet Bermasalah", Toast.LENGTH_SHORT).show();
-//            }
-//        });
-//    }
 
     public void onBackPressed(){
         startActivity(new Intent(getApplicationContext(), Pengantar1Activity.class));
@@ -319,7 +297,14 @@ public class TesBacaActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<SubmissionResponse> call, Response<SubmissionResponse> response) {
                 if(response.isSuccessful()){
-
+                    Log.d("Berhasil", "onResponse: " + response.body().toString());
+                    SubmissionModel testResult = response.body().getSubmissionModel();
+                    for (TesBacaModel tesBacaModel : dataList) {
+                        if(tesBacaModel.getId() == testResult.getIdIqraRefer()){
+                            dataList.get(dataList.indexOf(tesBacaModel)).setRekamHasil(testResult.getAccuracy());
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
                 } else {
                     Log.d("Upload", "gagal");
                 }

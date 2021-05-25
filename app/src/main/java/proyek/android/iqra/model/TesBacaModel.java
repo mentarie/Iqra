@@ -5,23 +5,24 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class TesBacaModel{
-	private int Id, numberColor, imageSource, rekamHasil, rekamLine, rekamIcon, userId;
+	private Integer idIqraRefer, numberColor, imageSource, rekamLine, rekamIcon, idUserRefer;
+	private Double accuracy;
 	private String number, bacaanId;
 
-	public TesBacaModel(Integer Id, String number, Integer numberColor, Integer imageSource, Integer rekamHasil, Integer rekamLine, Integer rekamIcon, String bacaanId, Integer userId){
-		this.Id = Id;
+	public TesBacaModel(Integer idIqraRefer, String number, Integer numberColor, Integer imageSource, Double accuracy, Integer rekamLine, Integer rekamIcon, String bacaanId, Integer idUserRefer){
+		this.idIqraRefer = idIqraRefer;
 		this.number = number;
 		this.numberColor = numberColor;
 		this.imageSource = imageSource;
-		this.rekamHasil = rekamHasil;
+		this.accuracy = accuracy;
 		this.rekamLine = rekamLine;
 		this.rekamIcon = rekamIcon;
 		this.bacaanId = bacaanId;
-		this.userId = userId;
+		this.idUserRefer = idUserRefer;
 	}
 
 	public Integer getId(){
-		return Id;
+		return idIqraRefer;
 	}
 	public Integer getRekamLine(){
 		return rekamLine;
@@ -32,8 +33,8 @@ public class TesBacaModel{
 	public Integer getNumberColor(){
 		return numberColor;
 	}
-	public Integer getRekamHasil(){
-		return rekamHasil;
+	public Double getRekamHasil(){
+		return accuracy;
 	}
 	public Integer getRekamIcon(){
 		return rekamIcon;
@@ -45,6 +46,10 @@ public class TesBacaModel{
 		return bacaanId;
 	}
 	public Integer getUserId(){
-		return userId;
+		return idUserRefer;
+	}
+
+	public void setRekamHasil(double hasil){
+		this.accuracy = hasil;
 	}
 }
