@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -36,6 +37,8 @@ import proyek.android.iqra.apihelper.BaseApiService;
 import proyek.android.iqra.apihelper.Callback;
 import proyek.android.iqra.apihelper.PreferencesUtility;
 import proyek.android.iqra.apihelper.UtilsApi;
+import proyek.android.iqra.apihelper.allsubmissiondata.AllSubmissionResponse;
+import proyek.android.iqra.apihelper.signin.SignInResponse;
 import proyek.android.iqra.apihelper.submission.SubmissionModel;
 import proyek.android.iqra.apihelper.submission.SubmissionResponse;
 import proyek.android.iqra.model.TesBacaModel;
@@ -55,6 +58,8 @@ public class TesBacaActivity extends AppCompatActivity {
     private Integer getId;
     private ArrayList<TesBacaModel> dataList;
     private TesBacaAdapter adapter;
+
+    private List<SubmissionModel> data;
 
     private final Callback<File> onClickCallback = new Callback<File>() {
         @Override
@@ -105,7 +110,7 @@ public class TesBacaActivity extends AppCompatActivity {
 
         //getId user
         getId = Integer.valueOf(PreferencesUtility.getId(getApplicationContext()));
-//        getSubmissionData(getId);
+        loadJSON(getId);
 
         //recycleview
         RecyclerView item_recycleview_tesbaca = findViewById(R.id.item_recycleview_tesbaca);
@@ -316,6 +321,22 @@ public class TesBacaActivity extends AppCompatActivity {
                 Toast.makeText(mContext, "Koneksi Internet Bermasalah", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void loadJSON(Integer getId){
+        mApiService.GetSubmissionsHandler(getId).enqueue(new retrofit2.Callback<AllSubmissionResponse>() {
+            @Override
+            public void onResponse(Call<AllSubmissionResponse> call, Response<AllSubmissionResponse> response) {
+                data = response.body().getData();
+                Log.d("Baerhasil", "onResponseMain: " + data.toString());
+                adapter.setItemList(data);
+            }
+
+            @Override
+            public void onFailure(Call<AllSubmissionResponse> call, Throwable t) {
+                Log.d("error", t.getMessage());
+            }
+        }
     }
 
     private void showPopupWindowUpload(final View view) {

@@ -1,8 +1,6 @@
 package proyek.android.iqra.apihelper;
 
 import okhttp3.MultipartBody;
-import proyek.android.iqra.apihelper.allsubmissiondata.AllSubmissionRequest;
-import proyek.android.iqra.apihelper.allsubmissiondata.AllSubmissionResponse;
 import proyek.android.iqra.apihelper.signin.SignInRequest;
 import proyek.android.iqra.apihelper.signin.SignInResponse;
 import proyek.android.iqra.apihelper.signup.SignUpRequest;
