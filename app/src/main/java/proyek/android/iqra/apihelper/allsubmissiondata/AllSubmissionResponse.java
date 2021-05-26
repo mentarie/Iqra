@@ -8,32 +8,37 @@ import java.util.List;
 import proyek.android.iqra.apihelper.submission.SubmissionModel;
 
 public class AllSubmissionResponse{
-	private List<SubmissionModel> data;
 
-	public List<SubmissionModel> getData(){
-		return data;
+	@SerializedName("data")
+	List<Data> dataList;
+
+	public List<Data> getDataList(){
+		return  dataList;
 	}
 
 	public class Data{
 		@Expose
 		@SerializedName("id_iqra_refer")
-		private String id_iqra_refer;
+		private Integer id_iqra_refer;
 		@Expose
 		@SerializedName("id_user_refer")
-		private String id_user_refer;
+		private Integer id_user_refer;
 		@Expose
 		@SerializedName("accuracy")
-		private String accuracy;
+		private Double accuracy;
 
-		public  String getAccuracy(){
+		public  Double getAccuracy(){
+			if(accuracy == null) return 0.0;
 			return accuracy;
 		}
 
-		public String getId_user_refer() {
+		public Integer getId_user_refer() {
+			if(id_user_refer == null) return 0;
 			return id_user_refer;
 		}
 
-		public String getId_iqra_refer() {
+		public Integer getId_iqra_refer() {
+			if(accuracy == null) return 0;
 			return id_iqra_refer;
 		}
 	}

@@ -17,16 +17,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import proyek.android.iqra.R;
 import proyek.android.iqra.activity.tes_baca.TesBacaActivity;
 import proyek.android.iqra.apihelper.BaseApiService;
+import proyek.android.iqra.apihelper.SResponse;
 import proyek.android.iqra.apihelper.UtilsApi;
+import proyek.android.iqra.apihelper.allsubmissiondata.AllSubmissionResponse;
 import proyek.android.iqra.apihelper.submission.SubmissionModel;
 import proyek.android.iqra.model.TesBacaModel;
 
 public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHolder> {
     private ArrayList<TesBacaModel> dataList;
+    private List<AllSubmissionResponse> submissionList;
     TesBacaActivity tesBacaActivity = new TesBacaActivity();
     String file_name;
     Integer userId;
@@ -40,7 +44,6 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
 
     private MediaRecorder mediaRecorder;
     private String path, getId;
-    private  ArrayList<SubmissionModel> myList;
     private proyek.android.iqra.apihelper.Callback<File> onClickCallback;
 
     public TesBacaAdapter(ArrayList<TesBacaModel> dataList, proyek.android.iqra.apihelper.Callback<File> onClickCallback) {
@@ -148,7 +151,9 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
         });
     }
 
-
-
+    public void setItemList(ArrayList<TesBacaModel> itemList){
+        this.dataList = itemList;
+        notifyDataSetChanged();
+    }
 
 }

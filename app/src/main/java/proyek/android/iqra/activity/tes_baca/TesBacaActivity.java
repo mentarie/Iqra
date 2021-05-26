@@ -36,6 +36,7 @@ import proyek.android.iqra.adapter.TesBacaAdapter;
 import proyek.android.iqra.apihelper.BaseApiService;
 import proyek.android.iqra.apihelper.Callback;
 import proyek.android.iqra.apihelper.PreferencesUtility;
+import proyek.android.iqra.apihelper.SResponse;
 import proyek.android.iqra.apihelper.UtilsApi;
 import proyek.android.iqra.apihelper.allsubmissiondata.AllSubmissionResponse;
 import proyek.android.iqra.apihelper.signin.SignInResponse;
@@ -58,8 +59,6 @@ public class TesBacaActivity extends AppCompatActivity {
     private Integer getId;
     private ArrayList<TesBacaModel> dataList;
     private TesBacaAdapter adapter;
-
-    private List<SubmissionModel> data;
 
     private final Callback<File> onClickCallback = new Callback<File>() {
         @Override
@@ -327,16 +326,23 @@ public class TesBacaActivity extends AppCompatActivity {
         mApiService.GetSubmissionsHandler(getId).enqueue(new retrofit2.Callback<AllSubmissionResponse>() {
             @Override
             public void onResponse(Call<AllSubmissionResponse> call, Response<AllSubmissionResponse> response) {
-                data = response.body().getData();
-                Log.d("Baerhasil", "onResponseMain: " + data.toString());
-                adapter.setItemList(data);
+                List<AllSubmissionResponse.Data> itemList = response.body().getDataList();
+                for (AllSubmissionResponse.Data item : itemList) {
+                    for (TesBacaModel tesBacaModel : dataList) {
+                        if(tesBacaModel.getId().equals(item.getId_iqra_refer())){
+                            dataList.get(dataList.indexOf(tesBacaModel)).setRekamHasil(item.getAccuracy());
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                }
+                adapter.setItemList(dataList);
             }
 
             @Override
             public void onFailure(Call<AllSubmissionResponse> call, Throwable t) {
                 Log.d("error", t.getMessage());
             }
-        }
+        });
     }
 
     private void showPopupWindowUpload(final View view) {

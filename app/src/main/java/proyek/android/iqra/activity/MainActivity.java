@@ -41,28 +41,28 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        loadJSON(getId);
+//        loadJSON(getId);
     }
 
-    private void loadJSON(Integer getId) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.43.48:8081")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        BaseApiService request = retrofit.create(BaseApiService.class);
-        Call<SResponse> call = request.GetSubmissionsHandler(getId);
-        call.enqueue(new Callback<SResponse>() {
-            @Override
-            public void onResponse(Call<SResponse> call, Response<SResponse> response) {
-                data = response.body().getData();
-                Log.d("Baerhasil", "onResponseMain: " + data.toString());
-                adapter.setItemList(data);
-            }
-
-            @Override
-            public void onFailure(Call<SResponse> call, Throwable t) {
-                Log.d("error", t.getMessage());
-            }
-        });
-    }
+//    private void loadJSON(Integer getId) {
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl("http://192.168.43.48:8081")
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//        BaseApiService request = retrofit.create(BaseApiService.class);
+//        Call<SResponse> call = request.GetSubmissionsHandler(getId);
+//        call.enqueue(new Callback<SResponse>() {
+//            @Override
+//            public void onResponse(Call<SResponse> call, Response<SResponse> response) {
+//                data = response.body().getData();
+//                Log.d("Baerhasil", "onResponseMain: " + data.toString());
+//                adapter.setItemList(data);
+//            }
+//
+//            @Override
+//            public void onFailure(Call<SResponse> call, Throwable t) {
+//                Log.d("error", t.getMessage());
+//            }
+//        });
+//    }
 }

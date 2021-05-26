@@ -1,6 +1,7 @@
 package proyek.android.iqra.apihelper;
 
 import okhttp3.MultipartBody;
+import proyek.android.iqra.apihelper.allsubmissiondata.AllSubmissionResponse;
 import proyek.android.iqra.apihelper.signin.SignInRequest;
 import proyek.android.iqra.apihelper.signin.SignInResponse;
 import proyek.android.iqra.apihelper.signup.SignUpRequest;
@@ -33,5 +34,5 @@ public interface BaseApiService {
     );
 
     @GET("/submissions/{id_user_refer}")
-    Call<SResponse> GetSubmissionsHandler (@Path("id_user_refer") int userId);
+    Call<AllSubmissionResponse> GetSubmissionsHandler (@Path("id_user_refer") int userId);
 }
