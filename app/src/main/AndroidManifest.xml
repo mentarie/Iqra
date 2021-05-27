@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activity.EditPasswordActivity"></activity>
         <activity android:name=".activity.ProfileBeforeSignInActivity" />
         <activity android:name=".activity.tes_baca.TesBacaInformationActivity" />
         <activity android:name=".activity.tes_baca.TesBacaActivity_Ebta" />

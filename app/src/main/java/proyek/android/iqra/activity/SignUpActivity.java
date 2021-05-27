@@ -86,11 +86,22 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
-    //validate username & password
-    private boolean validate(@NotNull EditText editText) {
+    //validate username
+    private boolean validateUsername(@NotNull EditText editText) {
         // check the lenght of the enter data in EditText and give error if its empty
         if (editText.getText().toString().trim().length() > 0) {
             return true; // returns true if field is not empty
+        }
+        editText.setError("Please Fill This");
+        editText.requestFocus();
+        return false;
+    }
+
+    //validate password
+    private boolean validatePassword(@NotNull EditText editText) {
+        // check the lenght of the enter data in EditText and give error if its empty
+        if (editText.getText().toString().trim().length() >= 8) {
+            return true;
         }
         editText.setError("Please Fill This");
         editText.requestFocus();
@@ -130,7 +141,7 @@ public class SignUpActivity extends AppCompatActivity {
                     id_user.trim()
                 );
 
-                if (validate(etUsername) && validateEmail() && validate(etPassword)) {
+                if (validateUsername(etUsername) && validateEmail() && validatePassword(etPassword)) {
                     loading = ProgressDialog.show(mContext, null, "Harap Tunggu...", true, false);
                     signUp(user);
                 }

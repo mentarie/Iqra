@@ -36,10 +36,8 @@ import proyek.android.iqra.adapter.TesBacaAdapter;
 import proyek.android.iqra.apihelper.BaseApiService;
 import proyek.android.iqra.apihelper.Callback;
 import proyek.android.iqra.apihelper.PreferencesUtility;
-import proyek.android.iqra.apihelper.SResponse;
 import proyek.android.iqra.apihelper.UtilsApi;
 import proyek.android.iqra.apihelper.allsubmissiondata.AllSubmissionResponse;
-import proyek.android.iqra.apihelper.signin.SignInResponse;
 import proyek.android.iqra.apihelper.submission.SubmissionModel;
 import proyek.android.iqra.apihelper.submission.SubmissionResponse;
 import proyek.android.iqra.model.TesBacaModel;
@@ -54,6 +52,7 @@ public class TesBacaActivity extends AppCompatActivity {
     Context mContext;
     BaseApiService mApiService;
 
+    private Double nilaiPopUpAkurasi;
     private MediaRecorder mediaRecorder;
     private String path;
     private Integer getId;
@@ -307,6 +306,9 @@ public class TesBacaActivity extends AppCompatActivity {
                         if(tesBacaModel.getId() == testResult.getIdIqraRefer()){
                             dataList.get(dataList.indexOf(tesBacaModel)).setRekamHasil(testResult.getAccuracy());
                             adapter.notifyDataSetChanged();
+                            nilaiPopUpAkurasi = dataList.get(dataList.indexOf(tesBacaModel)).getRekamHasil();
+
+                            //showPopupWindowHasilAkurasi(v, nilaiPopUpAkurasi);
                         }
                     }
                 } else {
@@ -357,7 +359,7 @@ public class TesBacaActivity extends AppCompatActivity {
         final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
-        int waktu_loading = 10000;
+        int waktu_loading = 9000;
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
@@ -365,4 +367,29 @@ public class TesBacaActivity extends AppCompatActivity {
             }
         }, waktu_loading);
     }
+
+//    private void showPopupWindowHasilAkurasi(final View view, final Double nilaiPopUpAkurasi) {
+//        LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(
+//                view.getContext().LAYOUT_INFLATER_SERVICE);
+//        View popupView = inflater.inflate(R.layout.activity_pop_up_hasil_rekaman, null);
+//
+//        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+//        int height = LinearLayout.LayoutParams.MATCH_PARENT;
+//
+//        boolean focusable = true;
+//        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+//
+//        Log.d("niali nilaiPopUpAkurasi", nilaiPopUpAkurasi.toString());
+//        TextView hasil_test = findViewById(R.id.hasil_test);
+//        hasil_test.setText(nilaiPopUpAkurasi.toString());
+//
+//        TextView button_lanjutkan = findViewById(R.id.button_lanjutkan);
+//        button_lanjutkan.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                popupWindow.dismiss();
+//            }
+//        });
+//        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+//    }
 }

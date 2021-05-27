@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -32,6 +33,8 @@ import proyek.android.iqra.apihelper.BaseApiService;
 import proyek.android.iqra.apihelper.Callback;
 import proyek.android.iqra.apihelper.PreferencesUtility;
 import proyek.android.iqra.apihelper.UtilsApi;
+import proyek.android.iqra.apihelper.allsubmissiondata.AllSubmissionResponse;
+import proyek.android.iqra.apihelper.submission.SubmissionModel;
 import proyek.android.iqra.apihelper.submission.SubmissionResponse;
 import proyek.android.iqra.model.TesBacaModel;
 import retrofit2.Call;
@@ -45,9 +48,12 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
     Context mContext;
     BaseApiService mApiService;
 
+    private Double nilaiPopUpAkurasi;
     private MediaRecorder mediaRecorder;
     private String path;
-    private int getId;
+    private Integer getId;
+    private ArrayList<TesBacaModel> dataList;
+    private TesBacaAdapter adapter;
 
     private Callback<File> onClickCallback = new Callback<File>() {
         @Override
@@ -90,6 +96,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
 
         //getId user
         getId = Integer.parseInt(PreferencesUtility.getId(getApplicationContext()));
+        loadJSON(getId);
 
         //recycleview
         RecyclerView item_recycleview_tesbaca = findViewById(R.id.item_recycleview_tesbaca);
@@ -426,7 +433,17 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
             @Override
             public void onResponse(Call<SubmissionResponse> call, Response<SubmissionResponse> response) {
                 if(response.isSuccessful()){
+                    Log.d("Berhasil", "onResponse: " + response.body().toString());
+                    SubmissionModel testResult = response.body().getSubmissionModel();
+                    for (TesBacaModel tesBacaModel : dataList) {
+                        if(tesBacaModel.getId() == testResult.getIdIqraRefer()){
+                            dataList.get(dataList.indexOf(tesBacaModel)).setRekamHasil(testResult.getAccuracy());
+                            adapter.notifyDataSetChanged();
+                            nilaiPopUpAkurasi = dataList.get(dataList.indexOf(tesBacaModel)).getRekamHasil();
 
+                            showPopupWindowHasilAkurasi(v, nilaiPopUpAkurasi);
+                        }
+                    }
                 } else {
                     Log.d("Upload", "gagal");
                 }
@@ -434,8 +451,31 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
 
             @Override
             public void onFailure(Call call, Throwable t) {
-                Log.d("response", t.getStackTrace().toString());
+                Log.d("response", t.getMessage().toString());
                 Toast.makeText(mContext, "Koneksi Internet Bermasalah", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void loadJSON(Integer getId){
+        mApiService.GetSubmissionsHandler(getId).enqueue(new retrofit2.Callback<AllSubmissionResponse>() {
+            @Override
+            public void onResponse(Call<AllSubmissionResponse> call, Response<AllSubmissionResponse> response) {
+                List<AllSubmissionResponse.Data> itemList = response.body().getDataList();
+                for (AllSubmissionResponse.Data item : itemList) {
+                    for (TesBacaModel tesBacaModel : dataList) {
+                        if(tesBacaModel.getId().equals(item.getId_iqra_refer())){
+                            dataList.get(dataList.indexOf(tesBacaModel)).setRekamHasil(item.getAccuracy());
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                }
+                adapter.setItemList(dataList);
+            }
+
+            @Override
+            public void onFailure(Call<AllSubmissionResponse> call, Throwable t) {
+                Log.d("error", t.getMessage());
             }
         });
     }
@@ -459,5 +499,29 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 popupWindow.dismiss();
             }
         }, waktu_loading);
+    }
+
+    private void showPopupWindowHasilAkurasi(final View view, final Double nilaiPopUpAkurasi) {
+        LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(
+                view.getContext().LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.activity_pop_up_hasil_rekaman, null);
+
+        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int height = LinearLayout.LayoutParams.MATCH_PARENT;
+
+        boolean focusable = true;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+        TextView hasil_test = findViewById(R.id.hasil_test);
+        hasil_test.setText(nilaiPopUpAkurasi.toString());
+
+        TextView button_lanjutkan = findViewById(R.id.button_lanjutkan);
+        button_lanjutkan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
     }
 }

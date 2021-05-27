@@ -124,7 +124,6 @@
                     android:layout_marginTop="24dp"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
-                    android:layout_marginBottom="24dp"
                     >
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -158,46 +157,47 @@
                 </LinearLayout>
 
                 <!--Password-->
-<!--                <LinearLayout-->
-<!--                    android:id="@+id/button_password_edit"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="vertical"-->
-<!--                    android:layout_marginTop="24dp"-->
-<!--                    android:layout_marginLeft="24dp"-->
-<!--                    android:layout_marginRight="24dp"-->
-<!--                    >-->
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:orientation="horizontal"-->
-<!--                        android:layout_marginBottom="4dp">-->
-<!--                        <ImageView-->
-<!--                            android:layout_width="24dp"-->
-<!--                            android:layout_height="24dp"-->
-<!--                            android:src="@drawable/ic_outline_lock"/>-->
-<!--                        <TextView-->
-<!--                            android:id="@+id/textPassword"-->
-<!--                            android:layout_width="0dp"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:layout_weight="11"-->
-<!--                            android:text="********"-->
-<!--                            android:layout_gravity="center_vertical"-->
-<!--                            android:layout_marginLeft="12dp"-->
-<!--                            android:textSize="12dp"-->
-<!--                            tools:ignore="RtlCompat"-->
-<!--                            />-->
-<!--                        <ImageView-->
-<!--                            android:layout_width="24dp"-->
-<!--                            android:layout_height="24dp"-->
-<!--                            android:src="@drawable/ic_outline_edit_black"/>-->
-<!--                    </LinearLayout>-->
-<!--                    <View-->
-<!--                        android:layout_width="fill_parent"-->
-<!--                        android:layout_height="1dp"-->
-<!--                        android:background="@color/colorLines"-->
-<!--                        android:layout_marginBottom="32dp"/>-->
-<!--                </LinearLayout>-->
+                <LinearLayout
+                    android:id="@+id/button_password_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_marginBottom="32dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="4dp">
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_outline_lock"/>
+                        <TextView
+                            android:id="@+id/textPassword"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="11"
+                            android:text="********"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="12dp"
+                            android:textSize="12dp"
+                            tools:ignore="RtlCompat"
+                            />
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_outline_edit_black"/>
+                    </LinearLayout>
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorLines"
+                        />
+                </LinearLayout>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"

@@ -2,6 +2,8 @@ package proyek.android.iqra.apihelper;
 
 import okhttp3.MultipartBody;
 import proyek.android.iqra.apihelper.allsubmissiondata.AllSubmissionResponse;
+import proyek.android.iqra.apihelper.emailchecker.EmailCheckerRequest;
+import proyek.android.iqra.apihelper.emailchecker.EmailCheckerResponse;
 import proyek.android.iqra.apihelper.signin.SignInRequest;
 import proyek.android.iqra.apihelper.signin.SignInResponse;
 import proyek.android.iqra.apihelper.signup.SignUpRequest;
@@ -35,4 +37,7 @@ public interface BaseApiService {
 
     @GET("/submissions/{id_user_refer}")
     Call<AllSubmissionResponse> GetSubmissionsHandler (@Path("id_user_refer") int userId);
+
+//    @GET("/email")
+//    Call<EmailCheckerResponse> EmailCheckerHandler (@Body EmailCheckerRequest EmailCheckerResponse);
 }

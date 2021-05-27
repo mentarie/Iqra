@@ -159,7 +159,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:textSize="10dp"
-                    android:text="Password minimal berisi 8 karakter terdiri dari angka, huruf, dan huruf kapital" />
+                    android:text="Password minimal berisi 8 karakter" />
             </LinearLayout>
             <TextView
                 android:id="@+id/button_signup"

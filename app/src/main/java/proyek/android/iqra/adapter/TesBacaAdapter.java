@@ -22,10 +22,8 @@ import java.util.List;
 import proyek.android.iqra.R;
 import proyek.android.iqra.activity.tes_baca.TesBacaActivity;
 import proyek.android.iqra.apihelper.BaseApiService;
-import proyek.android.iqra.apihelper.SResponse;
 import proyek.android.iqra.apihelper.UtilsApi;
 import proyek.android.iqra.apihelper.allsubmissiondata.AllSubmissionResponse;
-import proyek.android.iqra.apihelper.submission.SubmissionModel;
 import proyek.android.iqra.model.TesBacaModel;
 
 public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHolder> {
