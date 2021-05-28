@@ -52,8 +52,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
     private MediaRecorder mediaRecorder;
     private String path;
     private Integer getId;
-    private ArrayList<TesBacaModel> dataList;
-    private TesBacaAdapter adapter;
+    private ArrayList<TesBacaModel> dataList = new ArrayList<>();
 
     private Callback<File> onClickCallback = new Callback<File>() {
         @Override
@@ -66,6 +65,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
 
         }
     };
+    private TesBacaAdapter adapter = new TesBacaAdapter(dataList, onClickCallback);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,8 +100,6 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
 
         //recycleview
         RecyclerView item_recycleview_tesbaca = findViewById(R.id.item_recycleview_tesbaca);
-        ArrayList<TesBacaModel> dataList;
-        dataList = new ArrayList<>();
         dataList.add(new TesBacaModel(
                 15,
                 "1",
@@ -125,7 +123,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                3,
+                17,
                 "3",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_3", "drawable", this.getPackageName()),
@@ -136,7 +134,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                4,
+                18,
                 "4",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_4", "drawable", this.getPackageName()),
@@ -147,7 +145,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                5,
+                19,
                 "5",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_5", "drawable", this.getPackageName()),
@@ -158,7 +156,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                6,
+                20,
                 "6",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_6", "drawable", this.getPackageName()),
@@ -169,7 +167,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                7,
+                21,
                 "7",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_7", "drawable", this.getPackageName()),
@@ -180,7 +178,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                8,
+                22,
                 "8",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_8", "drawable", this.getPackageName()),
@@ -191,7 +189,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                9,
+                23,
                 "9",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_9", "drawable", this.getPackageName()),
@@ -202,7 +200,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                10,
+                24,
                 "10",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_10", "drawable", this.getPackageName()),
@@ -213,7 +211,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                11,
+                25,
                 "11",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_11", "drawable", this.getPackageName()),
@@ -224,7 +222,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                12,
+                26,
                 "12",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_12", "drawable", this.getPackageName()),
@@ -235,7 +233,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                13,
+                27,
                 "13",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_13", "drawable", this.getPackageName()),
@@ -246,7 +244,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                14,
+                28,
                 "14",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_14", "drawable", this.getPackageName()),
@@ -257,7 +255,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                15,
+                29,
                 "15",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_15", "drawable", this.getPackageName()),
@@ -268,7 +266,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                16,
+                30,
                 "16",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_16", "drawable", this.getPackageName()),
@@ -279,7 +277,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                17,
+                31,
                 "17",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_17", "drawable", this.getPackageName()),
@@ -290,7 +288,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                18,
+                32,
                 "18",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_18", "drawable", this.getPackageName()),
@@ -301,7 +299,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                19,
+                33,
                 "19",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_19", "drawable", this.getPackageName()),
@@ -312,7 +310,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                20,
+                34,
                 "20",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_20", "drawable", this.getPackageName()),
@@ -323,7 +321,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                21,
+                35,
                 "21",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_21", "drawable", this.getPackageName()),
@@ -334,7 +332,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                22,
+                36,
                 "22",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_22", "drawable", this.getPackageName()),
@@ -345,7 +343,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                23,
+                37,
                 "23",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_23", "drawable", this.getPackageName()),
@@ -356,7 +354,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                24,
+                38,
                 "24",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_24", "drawable", this.getPackageName()),
@@ -367,7 +365,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                25,
+                39,
                 "25",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_25", "drawable", this.getPackageName()),
@@ -378,7 +376,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                26,
+                40,
                 "26",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_26", "drawable", this.getPackageName()),
@@ -389,7 +387,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                27,
+                41,
                 "27",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_27", "drawable", this.getPackageName()),
@@ -400,7 +398,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 getId
         ));
         dataList.add(new TesBacaModel(
-                28,
+                42,
                 "28",
                 getResources().getIdentifier("button_bg_rounded_theme", "drawable", this.getPackageName()),
                 getResources().getIdentifier("jilid1_ebta_28", "drawable", this.getPackageName()),
@@ -440,8 +438,6 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                             dataList.get(dataList.indexOf(tesBacaModel)).setRekamHasil(testResult.getAccuracy());
                             adapter.notifyDataSetChanged();
                             nilaiPopUpAkurasi = dataList.get(dataList.indexOf(tesBacaModel)).getRekamHasil();
-
-                            showPopupWindowHasilAkurasi(v, nilaiPopUpAkurasi);
                         }
                     }
                 } else {
@@ -462,6 +458,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
             @Override
             public void onResponse(Call<AllSubmissionResponse> call, Response<AllSubmissionResponse> response) {
                 List<AllSubmissionResponse.Data> itemList = response.body().getDataList();
+                Log.d("Mentarie", "onResponse:" + dataList.size());
                 for (AllSubmissionResponse.Data item : itemList) {
                     for (TesBacaModel tesBacaModel : dataList) {
                         if(tesBacaModel.getId().equals(item.getId_iqra_refer())){
@@ -490,7 +487,6 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
 
         boolean focusable = true;
         final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
         int waktu_loading = 10000;
         Handler handler = new Handler();
@@ -499,29 +495,6 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                 popupWindow.dismiss();
             }
         }, waktu_loading);
-    }
-
-    private void showPopupWindowHasilAkurasi(final View view, final Double nilaiPopUpAkurasi) {
-        LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(
-                view.getContext().LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.activity_pop_up_hasil_rekaman, null);
-
-        int width = LinearLayout.LayoutParams.MATCH_PARENT;
-        int height = LinearLayout.LayoutParams.MATCH_PARENT;
-
-        boolean focusable = true;
-        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-
-        TextView hasil_test = findViewById(R.id.hasil_test);
-        hasil_test.setText(nilaiPopUpAkurasi.toString());
-
-        TextView button_lanjutkan = findViewById(R.id.button_lanjutkan);
-        button_lanjutkan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                popupWindow.dismiss();
-            }
-        });
     }
 }

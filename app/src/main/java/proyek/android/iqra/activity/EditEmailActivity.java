@@ -32,7 +32,7 @@ public class EditEmailActivity extends AppCompatActivity {
     ImageView button_close, button_save;
     TextView textJudul;
     EditText editEmail;
-    String getId, setEmail;
+    String getId, setEmail, setStatusEmail;
     Boolean emailAda;
 
     Context mContext;
@@ -71,10 +71,10 @@ public class EditEmailActivity extends AppCompatActivity {
         getId = PreferencesUtility.getId(getApplicationContext());
         editEmail = findViewById(R.id.editEmail);
         String email =editEmail.getText().toString();
-        EmailCheckerRequest cekEmail = new EmailCheckerRequest(
-                getId,
-                email
-        );
+//        EmailCheckerRequest cekEmail = new EmailCheckerRequest(
+//                getId,
+//                email
+//        );
         UpdateDataRequest user = new UpdateDataRequest(
                 getId,
                 "",
@@ -82,9 +82,12 @@ public class EditEmailActivity extends AppCompatActivity {
                 ""
         );
         if (validateLength(editEmail)) {
-            saveData(user);
+//            if(!validateEmailExist(cekEmail)){
+                saveData(user);
+//            }else{
+//                editEmail.setError("Email sudah digunakan");
+//            }
         }
-//        if(validateEmailExist(cekEmail)){};
     }
 
     //validate
@@ -107,18 +110,24 @@ public class EditEmailActivity extends AppCompatActivity {
 //            @Override
 //            public void onResponse(Call<EmailCheckerResponse> call, Response<EmailCheckerResponse> response) {
 //                emailAda = response.body().getData();
-//                Log.d("status email dlm", emailAda.toString());
+//                setStatusEmail = emailAda.toString();
+//                Log.d("setStatusEmail D", setStatusEmail);
 //            }
 //
 //            @Override
 //            public void onFailure(Call<EmailCheckerResponse> call, Throwable t) {
+//                Log.d("response", t.getStackTrace().toString());
+//                Toast.makeText(mContext, "Koneksi Internet Bermasalah", Toast.LENGTH_SHORT).show();
 //            }
 //        });
-//        if (emailAda){
-//            Log.d("status email luar", emailAda.toString());
+//
+//        Log.d("setStatusEmail L", setStatusEmail);
+//
+//        if(setStatusEmail.equals("true")){
 //            return true;
+//        }else{
+//            return false;
 //        }
-//        return false;
 //    }
 
     private void saveData(UpdateDataRequest user) {

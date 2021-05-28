@@ -166,6 +166,7 @@ public class SignUpActivity extends AppCompatActivity {
                 } else {
                     Log.i("debug", "onResponse: TIDAK BERHASIL");
                     progressDialog.dismiss();
+                    startActivity(new Intent(mContext, SignUpActivity.class));
                 }
             }
             @Override
@@ -173,6 +174,7 @@ public class SignUpActivity extends AppCompatActivity {
                 Log.d("response", t.getStackTrace().toString());
                 Toast.makeText(mContext, "Koneksi Internet Bermasalah", Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
+                startActivity(new Intent(mContext, SignUpActivity.class));
             }
         });
     }

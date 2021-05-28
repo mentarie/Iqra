@@ -2,15 +2,21 @@ package proyek.android.iqra.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,14 +34,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class EditPasswordActivity extends AppCompatActivity {
-    ImageView button_close, button_save, ImgShowHidePassword;
+    ImageView button_close, button_save;
     TextView textJudul;
     EditText editPassword;
     String getId;
 
     Context mContext;
     BaseApiService mApiService;
-    private boolean isOpenEye = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,25 +67,6 @@ public class EditPasswordActivity extends AppCompatActivity {
                 initComponents();
             }
         });
-
-        // widget show hide password
-        ImgShowHidePassword = findViewById(R.id.button_show_pass);
-        ImgShowHidePassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!isOpenEye) {
-                    ImgShowHidePassword.setSelected(true);
-                    isOpenEye = true;
-                    //Password visible
-                    editPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                }else{
-                    ImgShowHidePassword.setSelected(false);
-                    isOpenEye = false;
-                    //Password not visible
-                    editPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                }
-            }
-        });
     }
 
     private void initComponents() {
@@ -100,7 +86,7 @@ public class EditPasswordActivity extends AppCompatActivity {
 
     //validate
     private boolean validate(@NotNull EditText editText) {
-        if (editText.getText().toString().trim().length() > 0) {
+        if (editText.getText().toString().trim().length() >= 8) {
             return true;
         }
         editText.setError("Please Fill This");
@@ -109,6 +95,12 @@ public class EditPasswordActivity extends AppCompatActivity {
     }
 
     private void saveData(UpdateDataRequest user) {
+        // display a progress dialog
+        final ProgressDialog progressDialog = new ProgressDialog(EditPasswordActivity.this);
+        progressDialog.setCancelable(false); // set cancelable to false
+        progressDialog.setMessage("Harap Tunggu ..."); // set message
+        progressDialog.show(); // show progress dialog
+
         mApiService.UpdateUserHandler(user).enqueue(new Callback<UpdateDataResponse>() {
             @Override
             public void onResponse(Call<UpdateDataResponse> call, Response<UpdateDataResponse> response) {
@@ -116,9 +108,10 @@ public class EditPasswordActivity extends AppCompatActivity {
                     //logout system
                     SaveSharedPreference.setLoggedOut(getApplicationContext(), false);
                     //dialihkan ke halaman sebelum sign in
-                    startActivity(new Intent(getApplicationContext(),SplashScreenActivity.class));
+                    startActivity(new Intent(getApplicationContext(),SignInActivity.class));
                 } else {
                     Toast.makeText(EditPasswordActivity.this, "Error! Please try again!", Toast.LENGTH_SHORT).show();
+                    progressDialog.setCancelable(true);
                 }
             }
 
@@ -126,6 +119,7 @@ public class EditPasswordActivity extends AppCompatActivity {
             public void onFailure(Call<UpdateDataResponse> call, Throwable t) {
                 Log.d("response", t.getStackTrace().toString());
                 Toast.makeText(mContext, "Koneksi Internet Bermasalah", Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
             }
         });
     }

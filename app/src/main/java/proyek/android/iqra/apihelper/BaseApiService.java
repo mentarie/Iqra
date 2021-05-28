@@ -38,6 +38,6 @@ public interface BaseApiService {
     @GET("/submissions/{id_user_refer}")
     Call<AllSubmissionResponse> GetSubmissionsHandler (@Path("id_user_refer") int userId);
 
-//    @GET("/email")
+//    @POST("/email")
 //    Call<EmailCheckerResponse> EmailCheckerHandler (@Body EmailCheckerRequest EmailCheckerResponse);
 }

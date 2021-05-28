@@ -42,9 +42,10 @@
                     android:textStyle="bold"
                     android:textSize="48sp"
                     android:padding="10dp"/>
-                <TextView
+                <Button
                     android:id="@+id/button_lanjutkan"
                     android:layout_width="match_parent"
+                    android:textAllCaps="false"
                     android:layout_height="48dp"
                     android:background="@drawable/button_bg_rounded_theme"
                     android:gravity="center"

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -36,6 +37,7 @@ public class LatihanBacaActivity_18 extends AppCompatActivity {
         ((View) button_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopAudio();
                 Intent back = new Intent(LatihanBacaActivity_18.this, Pengantar1Activity.class);
                 startActivity(back);
             }
@@ -45,6 +47,7 @@ public class LatihanBacaActivity_18 extends AppCompatActivity {
         button_before.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopAudio();
                 Intent before = new Intent(LatihanBacaActivity_18.this, LatihanBacaActivity_17.class);
                 startActivity(before);
             }
@@ -209,5 +212,21 @@ public class LatihanBacaActivity_18 extends AppCompatActivity {
     public void onBackPressed(){
         startActivity(new Intent(getApplicationContext(), Pengantar1Activity.class));
         finish();
+    }
+
+    public void stopAudio(){
+        Log.d("Mentarie", "stopAudio: stop audio terpanggil");
+        //ganti ke file lain
+        if(mp != null && mp.isPlaying()){
+            mp.stop();
+            mp.release();
+            mp = null;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        stopAudio();
+        super.onDestroy();
     }
 }

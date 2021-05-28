@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.io.File;
@@ -61,17 +62,23 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
         final TesBacaModel model = dataList.get(position);
         //parsing
 //        Integer id = model.getUserId();
-
+        Double percentage = (double) Math.ceil(model.getRekamHasil() * 100);
+        if(percentage != 0){
+            holder.rekamHasil.setBackground(ContextCompat.getDrawable(holder.rekamHasil.getContext(), R.drawable.button_bg_rounded_disabled));
+        }
 //        holder.Id=model.getId();
         holder.number.setText(model.getNumber());
         holder.numberColor.setBackgroundResource(model.getNumberColor());
         holder.imageSource.setImageResource(model.getImageSource());
-        holder.rekamHasil.setText(model.getRekamHasil().toString());
+        holder.rekamHasil.setText(String.format("%.0f%%",percentage));
         holder.rekamLine.setBackgroundResource(model.getRekamLine());
         holder.rekamIcon.setBackgroundResource(model.getRekamIcon());
 //        holder.bacaanId=model.getBacaanId();
 //        holder.userId=model.getUserId();
 
+        if (holder.rekamHasil.getText() == ""){
+
+        }
 
         //set onclick rekam
         holder.rekamLine.setOnClickListener(new View.OnClickListener(){

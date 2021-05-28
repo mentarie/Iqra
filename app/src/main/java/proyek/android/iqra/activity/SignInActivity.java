@@ -159,6 +159,7 @@ public class SignInActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(SignInActivity.this, "Error! Please try again!", Toast.LENGTH_SHORT).show();
                     progressDialog.setCancelable(true);
+                    startActivity(new Intent(mContext, SignInActivity.class));
                 }
             }
 
@@ -167,6 +168,7 @@ public class SignInActivity extends AppCompatActivity {
                 Log.d("response", t.getStackTrace().toString());
                 Toast.makeText(mContext, "Koneksi Internet Bermasalah", Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
+                startActivity(new Intent(mContext, SignInActivity.class));
             }
         });
     }

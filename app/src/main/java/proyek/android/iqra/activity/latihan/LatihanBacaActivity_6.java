@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -20,7 +21,7 @@ import proyek.android.iqra.activity.Pengantar1Activity;
 public class LatihanBacaActivity_6 extends AppCompatActivity {
     TextView textJudul;
     ImageView button_back, button_next, button_before;
-    LinearLayout k_j1_h6, baca_j1_h6_2, baca_j1_h6_3, baca_j1_h6_4, baca_j1_h6_5, baca_j1_h6_6, baca_j1_h6_7, baca_j1_h6_8, baca_j1_h6_9, baca_j1_h6_10, baca_j1_h6_11, baca_j1_h6_12;
+    LinearLayout k_j1_h6, baca_j1_h6_2, baca_j1_h6_3, baca_j1_h6_4, baca_j1_h6_5, baca_j1_h6_6, baca_j1_h6_7, baca_j1_h6_8, baca_j1_h6_9, baca_j1_h6_10, baca_j1_h6_11, baca_j1_h6_12, baca_j1_h6_13, baca_j1_h6_14, baca_j1_h6_15, baca_j1_h6_16;
     public MediaPlayer mp;
     final Handler handler_interact=new Handler();
 
@@ -36,6 +37,7 @@ public class LatihanBacaActivity_6 extends AppCompatActivity {
         ((View) button_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopAudio();
                 Intent back = new Intent(LatihanBacaActivity_6.this, Pengantar1Activity.class);
                 startActivity(back);
             }
@@ -45,6 +47,7 @@ public class LatihanBacaActivity_6 extends AppCompatActivity {
         button_before.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopAudio();
                 Intent before = new Intent(LatihanBacaActivity_6.this, LatihanBacaActivity_5.class);
                 startActivity(before);
             }
@@ -54,6 +57,7 @@ public class LatihanBacaActivity_6 extends AppCompatActivity {
         button_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopAudio();
                 Intent next = new Intent(LatihanBacaActivity_6.this, LatihanBacaActivity_7.class);
                 startActivity(next);
             }
@@ -166,6 +170,42 @@ public class LatihanBacaActivity_6 extends AppCompatActivity {
                 playAudio(R.raw.mp_baca_j1_h6_12, baca_j1_h6_12);
             }
         });
+
+        //13
+        baca_j1_h6_13 = findViewById(R.id.baca_j1_h6_13);
+        baca_j1_h6_13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playAudio(R.raw.mp_baca_j1_h6_13, baca_j1_h6_13);
+            }
+        });
+
+        //14
+        baca_j1_h6_14 = findViewById(R.id.baca_j1_h6_14);
+        baca_j1_h6_14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playAudio(R.raw.mp_baca_j1_h6_14, baca_j1_h6_14);
+            }
+        });
+
+        //15
+        baca_j1_h6_15 = findViewById(R.id.baca_j1_h6_15);
+        baca_j1_h6_15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playAudio(R.raw.mp_baca_j1_h6_15, baca_j1_h6_15);
+            }
+        });
+
+        //16
+        baca_j1_h6_16 = findViewById(R.id.baca_j1_h6_16);
+        baca_j1_h6_16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playAudio(R.raw.mp_baca_j1_h6_16, baca_j1_h6_16);
+            }
+        });
     }
 
     public void playAudio(int audioId, final LinearLayout ll)
@@ -200,5 +240,21 @@ public class LatihanBacaActivity_6 extends AppCompatActivity {
     public void onBackPressed(){
         startActivity(new Intent(getApplicationContext(), Pengantar1Activity.class));
         finish();
+    }
+
+    public void stopAudio(){
+        Log.d("Mentarie", "stopAudio: stop audio terpanggil");
+        //ganti ke file lain
+        if(mp != null && mp.isPlaying()){
+            mp.stop();
+            mp.release();
+            mp = null;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        stopAudio();
+        super.onDestroy();
     }
 }
