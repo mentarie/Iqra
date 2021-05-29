@@ -13,6 +13,8 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -20,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -438,6 +441,8 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
                             dataList.get(dataList.indexOf(tesBacaModel)).setRekamHasil(testResult.getAccuracy());
                             adapter.notifyDataSetChanged();
                             nilaiPopUpAkurasi = dataList.get(dataList.indexOf(tesBacaModel)).getRekamHasil();
+
+                            showPopupWindowHasilAkurasi(v, nilaiPopUpAkurasi);
                         }
                     }
                 } else {
@@ -488,13 +493,42 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
         boolean focusable = true;
         final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
 
-        int waktu_loading = 10000;
+        int waktu_loading = 8000;
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
                 popupWindow.dismiss();
             }
         }, waktu_loading);
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+    }
+
+    private void showPopupWindowHasilAkurasi(final View view, final Double nilaiPopUpAkurasi) {
+        LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(
+                view.getContext().LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.activity_pop_up_hasil_rekaman, (ViewGroup) getWindow().getDecorView().findViewById(R.id.content));
+
+        DecimalFormat formatter = new DecimalFormat("0.00");
+        Double percentage = (nilaiPopUpAkurasi * 100);
+
+
+        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int height = LinearLayout.LayoutParams.MATCH_PARENT;
+
+        boolean focusable = true;
+        final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+        Log.d("niali nilaiPopUpAkurasi", nilaiPopUpAkurasi.toString());
+        TextView hasil_test = popupView.findViewById(R.id.hasil_test);
+        hasil_test.setText(formatter.format(percentage) + "%");
+
+        Button button_lanjutkan = popupView.findViewById(R.id.button_lanjutkan);
+        button_lanjutkan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.dismiss();
+            }
+        });
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
     }
 }

@@ -64,7 +64,7 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
 //        Integer id = model.getUserId();
         Double percentage = (double) Math.ceil(model.getRekamHasil() * 100);
         if(percentage != 0){
-            holder.rekamHasil.setBackground(ContextCompat.getDrawable(holder.rekamHasil.getContext(), R.drawable.button_bg_rounded_disabled));
+            holder.rekamHasil.setBackground(ContextCompat.getDrawable(holder.rekamHasil.getContext(), R.drawable.button_bg_rounded_enabled));
         }
 //        holder.Id=model.getId();
         holder.number.setText(model.getNumber());
