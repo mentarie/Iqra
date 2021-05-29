@@ -308,13 +308,13 @@
     </ScrollView>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="65dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="48px"
-        tools:layout_editor_absoluteX="14dp">
+        tools:layout_editor_absoluteX="14dp"
+        android:background="@color/colorSeparator">
         <ImageView
             android:id="@+id/j1_h3_b"
             android:layout_width="32dp"

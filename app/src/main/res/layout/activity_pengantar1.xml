@@ -31,41 +31,37 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_weight="1"
+            android:orientation="horizontal"
             android:padding="14dp">
             <TextView
                 android:id="@+id/button_latihan"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_marginEnd="6dp"
                 android:text="Latihan"
                 android:gravity="center_vertical"
+                android:textAlignment="center"
                 android:padding="12dp"
                 android:textStyle="bold"
-                android:layout_weight="1"
                 android:textSize="16sp"
-                android:background="@drawable/button_bg_rounded_corners_line" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="14dp"
-            android:paddingRight="14dp"
-            android:paddingBottom="14dp"
-            >
+                android:background="@drawable/button_bg_rounded_corners_line"
+                tools:ignore="RtlCompat" />
             <TextView
                 android:id="@+id/button_tesbaca"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_marginEnd="6dp"
                 android:text="Tes Baca"
+                android:textAlignment="center"
                 android:gravity="center_vertical"
                 android:padding="12dp"
                 android:textStyle="bold"
-                android:layout_weight="1"
                 android:textSize="16sp"
-                android:background="@drawable/button_bg_rounded_corners_line" />
+                android:background="@drawable/button_bg_rounded_corners_line"
+                tools:ignore="RtlCompat" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

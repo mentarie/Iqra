@@ -53,13 +53,13 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="65dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteX="14dp"
-        android:background="@color/colorBackground">
+        android:background="@color/colorSeparator">
         <ImageView
             android:id="@+id/j1_h18_b"
             android:layout_width="32dp"
