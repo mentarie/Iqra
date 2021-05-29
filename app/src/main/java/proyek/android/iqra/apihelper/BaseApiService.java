@@ -27,7 +27,7 @@ public interface BaseApiService {
     Call<SignInResponse>LoginHandler(@Body SignInRequest SignInRequest);
 
     @PUT("/update")
-    Call<UpdateDataResponse>UpdateUserHandler(@Body UpdateDataRequest UpdateDataRequest);
+    Call<UpdateDataResponse>UpdateUserHandler(@Body UpdateDataRequest UpdateDataResponse);
 
     @Multipart
     @POST("/submission")

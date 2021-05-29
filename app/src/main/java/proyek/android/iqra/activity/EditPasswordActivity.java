@@ -37,7 +37,7 @@ public class EditPasswordActivity extends AppCompatActivity {
     ImageView button_close, button_save;
     TextView textJudul;
     EditText editPassword;
-    String getId;
+    Integer getId;
 
     Context mContext;
     BaseApiService mApiService;
@@ -71,7 +71,7 @@ public class EditPasswordActivity extends AppCompatActivity {
 
     private void initComponents() {
         //parsing
-        getId = PreferencesUtility.getId(getApplicationContext());
+        getId = Integer.parseInt(PreferencesUtility.getId(getApplicationContext()));
         editPassword = findViewById(R.id.editPassword);
         UpdateDataRequest user = new UpdateDataRequest(
                 getId,

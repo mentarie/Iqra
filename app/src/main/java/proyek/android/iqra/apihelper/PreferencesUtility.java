@@ -49,4 +49,17 @@ public class PreferencesUtility {
         return prefs.getString(SaveSharedPreference.KEY_EMAIL, null);
     }
 
+    public static boolean saveToken(String token, Context context){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor prefsEditor = prefs.edit();
+        prefsEditor.putString(SaveSharedPreference.KEY_TOKEN, token);
+        prefsEditor.apply();
+        return true;
+    }
+
+    public static String getToken(Context context){
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getString(SaveSharedPreference.KEY_TOKEN, null);
+    }
+
 }

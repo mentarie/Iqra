@@ -11,15 +11,18 @@ public class SaveSharedPreference {
     public static String KEY_EMAIL = "email";
     public static String KEY_ID = "id";
 
+    public static String KEY_TOKEN = "token";
+
     static SharedPreferences getPreferences(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context);
     }
-    public static void setLoggedIn(Context context, boolean loggedIn, String username, String email, String id) {
+    public static void setLoggedIn(Context context, boolean loggedIn, String username, String email, String id, String token) {
         SharedPreferences.Editor editor = getPreferences(context).edit();
         editor.putBoolean(LOGGED_IN_PREF, loggedIn);
         editor.putString(KEY_USERNAME, username);
         editor.putString(KEY_EMAIL, email);
         editor.putString(KEY_ID, id);
+        editor.putString(KEY_TOKEN, token);
         editor.apply();
     }
 
@@ -45,5 +48,12 @@ public class SaveSharedPreference {
 
     public static boolean getLoggedStatus(Context context) {
         return getPreferences(context).getBoolean(LOGGED_IN_PREF, false);
+    }
+
+    public static void setKeyToken(Context context, boolean loggedIn, String keyToken) {
+        SharedPreferences.Editor editor = getPreferences(context).edit();
+        editor.putBoolean(LOGGED_IN_PREF, loggedIn);
+        editor.putString(KEY_TOKEN, keyToken);
+        editor.apply();
     }
 }

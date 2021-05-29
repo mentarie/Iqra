@@ -142,16 +142,12 @@ public class SignInActivity extends AppCompatActivity {
                     setUsername = response.body().getData().getUsername();
                     setEmail = response.body().getData().getEmail();
                     setId = response.body().getData().getId();
-                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true, setUsername, setEmail, setId);
+                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true, setUsername, setEmail, setId, token);
 
                     PreferencesUtility.saveUsername(setUsername, getApplicationContext());
                     PreferencesUtility.saveEmail(setEmail, getApplicationContext());
                     PreferencesUtility.saveId(setId, getApplicationContext());
-
-                    flag = SaveSharedPreference.getLoggedStatus(getApplicationContext());
-                    getUsername = PreferencesUtility.getUsername(getApplicationContext());
-                    getEmail = PreferencesUtility.getEmail(getApplicationContext());
-                    getId = PreferencesUtility.getId(getApplicationContext());
+                    PreferencesUtility.saveToken(token, getApplicationContext());
 
                     //login start main activity
                     Intent intent = new Intent(SignInActivity.this, HomeActivity.class);

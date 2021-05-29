@@ -2,11 +2,11 @@ package proyek.android.iqra.apihelper.updatedata;
 
 public class UpdateDataRequest {
 	private String password;
-	private String id;
+	private Integer id;
 	private String email;
 	private String username;
 
-	public UpdateDataRequest(String id, String username, String email, String password) {
+	public UpdateDataRequest(Integer id, String username, String email, String password) {
 		this.id = id;
 		this.username = username;
 		this.email = email;
@@ -21,11 +21,11 @@ public class UpdateDataRequest {
 		return password;
 	}
 
-	public void setId(String id){
+	public void setId(Integer id){
 		this.id = id;
 	}
 
-	public String getId(){
+	public Integer getId(){
 		return id;
 	}
 

@@ -29,7 +29,8 @@ public class EditNameActivity extends AppCompatActivity {
     ImageView button_close, button_save;
     TextView textJudul;
     EditText editNama;
-    String getId, setUsername;
+    String setUsername, getToken;
+    Integer getId;
 
     Context mContext;
     BaseApiService mApiService;
@@ -63,8 +64,11 @@ public class EditNameActivity extends AppCompatActivity {
 
     private void initComponents() {
         //parsing
-        getId = PreferencesUtility.getId(getApplicationContext());
         editNama = findViewById(R.id.editNama);
+        getId = Integer.parseInt(PreferencesUtility.getId(getApplicationContext()));
+
+        Log.d("edittext", editNama.getText().toString());
+        Log.d("edittext", editNama.getText().toString());
         UpdateDataRequest user = new UpdateDataRequest(
                 getId,
                 editNama.getText().toString(),

@@ -235,7 +235,7 @@ public class LatihanBacaActivity extends AppCompatActivity {
     }
 
     public void stopAudio(){
-        Log.d("Mentarie", "stopAudio: stop audio terpanggil");
+        Log.d("notif stop audio", "stopAudio: stop audio terpanggil");
         //ganti ke file lain
         if(mp != null && mp.isPlaying()){
             mp.stop();

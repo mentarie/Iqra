@@ -32,8 +32,9 @@ public class EditEmailActivity extends AppCompatActivity {
     ImageView button_close, button_save;
     TextView textJudul;
     EditText editEmail;
-    String getId, setEmail, setStatusEmail;
+    String setEmail, setStatusEmail;
     Boolean emailAda;
+    Integer getId;
 
     Context mContext;
     BaseApiService mApiService;
@@ -68,7 +69,7 @@ public class EditEmailActivity extends AppCompatActivity {
 
     private void initComponents() {
         //parsing
-        getId = PreferencesUtility.getId(getApplicationContext());
+        getId = Integer.parseInt(PreferencesUtility.getId(getApplicationContext()));
         editEmail = findViewById(R.id.editEmail);
         String email =editEmail.getText().toString();
 //        EmailCheckerRequest cekEmail = new EmailCheckerRequest(
