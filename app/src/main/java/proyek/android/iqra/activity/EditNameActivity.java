@@ -29,7 +29,7 @@ public class EditNameActivity extends AppCompatActivity {
     ImageView button_close, button_save;
     TextView textJudul;
     EditText editNama;
-    String setUsername, getToken;
+    String setUsername, getName;
     Integer getId;
 
     Context mContext;
@@ -53,6 +53,10 @@ public class EditNameActivity extends AppCompatActivity {
         mContext = this;
         mApiService = UtilsApi.getAPIService();
 
+        getName = PreferencesUtility.getUsername(getApplicationContext());
+        editNama = findViewById(R.id.editNama);
+        editNama.setText(getName);
+
         button_save = findViewById(R.id.button_save);
         button_save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +68,6 @@ public class EditNameActivity extends AppCompatActivity {
 
     private void initComponents() {
         //parsing
-        editNama = findViewById(R.id.editNama);
         getId = Integer.parseInt(PreferencesUtility.getId(getApplicationContext()));
 
         Log.d("edittext", editNama.getText().toString());

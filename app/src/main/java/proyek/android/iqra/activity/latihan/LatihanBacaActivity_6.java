@@ -21,7 +21,7 @@ import proyek.android.iqra.activity.Pengantar1Activity;
 public class LatihanBacaActivity_6 extends AppCompatActivity {
     TextView textJudul;
     ImageView button_back, button_next, button_before;
-    LinearLayout k_j1_h6, baca_j1_h6_2, baca_j1_h6_3, baca_j1_h6_4, baca_j1_h6_5, baca_j1_h6_6, baca_j1_h6_7, baca_j1_h6_8, baca_j1_h6_9, baca_j1_h6_10, baca_j1_h6_11, baca_j1_h6_12, baca_j1_h6_13, baca_j1_h6_14, baca_j1_h6_15, baca_j1_h6_16;
+    LinearLayout k_j1_h6, baca_j1_h6_2, baca_j1_h6_3, baca_j1_h6_4, baca_j1_h6_5, baca_j1_h6_6, baca_j1_h6_7, baca_j1_h6_8, baca_j1_h6_9, baca_j1_h6_10, baca_j1_h6_11, baca_j1_h6_12, baca_j1_h6_13, baca_j1_h6_14, baca_j1_h6_15, baca_j1_h6_16, baca_j1_h6_17;
     public MediaPlayer mp;
     final Handler handler_interact=new Handler();
 
@@ -204,6 +204,15 @@ public class LatihanBacaActivity_6 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 playAudio(R.raw.mp_baca_j1_h6_16, baca_j1_h6_16);
+            }
+        });
+
+        //17
+        baca_j1_h6_17 = findViewById(R.id.baca_j1_h6_17);
+        baca_j1_h6_17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playAudio(R.raw.mp_baca_j1_h6_17, baca_j1_h6_17);
             }
         });
     }
