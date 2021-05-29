@@ -11,9 +11,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logo_iqra"
+        android:icon="@drawable/logo_iqra_putih"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo_iqra"
+        android:roundIcon="@drawable/logo_iqra_putih"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
