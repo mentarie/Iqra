@@ -362,7 +362,7 @@ public class TesBacaActivity extends AppCompatActivity {
         final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
-        int waktu_loading = 8000;
+        int waktu_loading = 6000;
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
