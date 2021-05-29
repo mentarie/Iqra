@@ -32,7 +32,7 @@
         android:id="@+id/scrollview"
         app:layout_constraintTop_toBottomOf="@+id/textview1"
         android:layout_width="match_parent"
-        android:layout_height="540dp">
+        android:layout_height="wrap_content">
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

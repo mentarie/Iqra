@@ -493,7 +493,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
         boolean focusable = true;
         final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
 
-        int waktu_loading = 6000;
+        int waktu_loading = 3000;
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
