@@ -1,5 +1,6 @@
 package proyek.android.iqra.activity.tes_baca;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -61,6 +62,7 @@ public class TesBacaActivity extends AppCompatActivity {
     private Integer getId;
     private ArrayList<TesBacaModel> dataList;
     private TesBacaAdapter adapter;
+    final private short REQUEST_EXTERNAL_STORAGE = 1001;
 
     private final Callback<File> onClickCallback = new Callback<File>() {
         @Override
@@ -78,6 +80,11 @@ public class TesBacaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tes_baca);
+
+        if(!checkPermission()){
+            Toast.makeText(this, "Mohon berikan izin terlebih dahulu", Toast.LENGTH_SHORT).show();
+            requestPermission();
+        }
 
         textJudul = (TextView) findViewById(R.id.textToolbar);
         textJudul.setText("Jilid 1 : Tes Baca");
@@ -398,5 +405,30 @@ public class TesBacaActivity extends AppCompatActivity {
             }
         });
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+    }
+
+    private boolean checkPermission(){
+        int permission = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        return permission == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private void requestPermission(){
+        String[] permissionArray= {
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+        };
+        Log.d("Mentarie", "requestPermission: requesting");
+        ActivityCompat.requestPermissions(
+                this,
+                permissionArray,
+                REQUEST_EXTERNAL_STORAGE
+        );
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == REQUEST_EXTERNAL_STORAGE && grantResults[0] == PackageManager.PERMISSION_DENIED){
+            Toast.makeText(this, "Kasi izin cok kalo mau pake bego bat dah", Toast.LENGTH_SHORT).show();
+        }
     }
 }

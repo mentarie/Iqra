@@ -1,11 +1,16 @@
 package proyek.android.iqra.activity.tes_baca;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Handler;
@@ -56,6 +61,7 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
     private String path;
     private Integer getId;
     private ArrayList<TesBacaModel> dataList = new ArrayList<>();
+    final private short REQUEST_EXTERNAL_STORAGE = 1001;
 
     private Callback<File> onClickCallback = new Callback<File>() {
         @Override
@@ -74,6 +80,11 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tes_baca_ebta);
+
+        if(!checkPermission()){
+            Toast.makeText(this, "Mohon berikan izin terlebih dahulu", Toast.LENGTH_SHORT).show();
+            requestPermission();
+        }
 
         textJudul = (TextView) findViewById(R.id.textToolbar);
         textJudul.setText("Jilid 1 : Tes Baca");
@@ -97,12 +108,21 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
         mContext = this;
         mApiService = UtilsApi.getAPIService();
 
+        //permission
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[]{
+                    Manifest.permission.RECORD_AUDIO,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+            }, 111);
+        }
+
         //getId user
         getId = Integer.parseInt(PreferencesUtility.getId(getApplicationContext()));
         loadJSON(getId);
 
         //recycleview
         RecyclerView item_recycleview_tesbaca = findViewById(R.id.item_recycleview_tesbaca);
+
         dataList.add(new TesBacaModel(
                 15,
                 "1",
@@ -418,6 +438,14 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
         item_recycleview_tesbaca.setAdapter(adapter);
     }
 
+    private boolean checkPermissionFromDevice() {
+        int write_external_storage_result = ContextCompat.checkSelfPermission(
+                this,Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int record_audio_result = ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO);
+        return write_external_storage_result == PackageManager.PERMISSION_GRANTED &&
+                record_audio_result == PackageManager.PERMISSION_GRANTED;
+    }
+
     public void onBackPressed(){
         startActivity(new Intent(getApplicationContext(), Pengantar1Activity.class));
         finish();
@@ -530,5 +558,30 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
             }
         });
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+    }
+
+    private boolean checkPermission(){
+        int permission = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        return permission == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private void requestPermission(){
+        String[] permissionArray= {
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+        };
+        Log.d("Mentarie", "requestPermission: requesting");
+        ActivityCompat.requestPermissions(
+                this,
+                permissionArray,
+                REQUEST_EXTERNAL_STORAGE
+        );
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if(requestCode == REQUEST_EXTERNAL_STORAGE && grantResults[0] == PackageManager.PERMISSION_DENIED){
+            Toast.makeText(this, "Kasi izin cok kalo mau pake bego bat dah", Toast.LENGTH_SHORT).show();
+        }
     }
 }

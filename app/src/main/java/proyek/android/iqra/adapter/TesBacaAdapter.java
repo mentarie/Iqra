@@ -136,16 +136,22 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
 
         try {
             mediaRecorder.prepare();
+            mediaRecorder.start();
         } catch (IOException e) {
             e.printStackTrace();
+            Log.d("Mentarie", "recordAudio: " + e.getMessage());
         }
-        mediaRecorder.start();
 
         //stop record
         line.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mediaRecorder.stop();
+                try {
+                    mediaRecorder.stop();
+                    mediaRecorder.reset();
+                }catch (Exception e){
+                    Log.d("Mentarie", "onClick: stop" + e.getMessage());
+                }
                 line.setBackgroundResource(R.drawable.button_bg_circle_disabled_line);
                 icon.setBackgroundResource(R.drawable.ic_baseline_mic_disabled);
 
@@ -160,5 +166,6 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
         this.dataList = itemList;
         notifyDataSetChanged();
     }
+
 
 }
