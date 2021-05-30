@@ -14,24 +14,11 @@ public class SignUpRequest {
     @SerializedName("password")
     @Expose
     private String password;
-    @SerializedName("userId")
-    @Expose
-    private String id_user;
-    @SerializedName("id")
-    @Expose
-    private Integer id;
 
-    public SignUpRequest(String username, String email, String password, String id_user){
+    public SignUpRequest(String username, String email, String password){
         this.username = username;
         this.email = email;
         this.password = password;
-        this.id_user = id_user;
-    }
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     @Override
@@ -40,8 +27,6 @@ public class SignUpRequest {
                 "username='" + username + '\'' +
                 ", email='" + email + '\'' +
                 ", password=" + password +
-                ", id_user=" + id_user +
-                ", id=" + id +
                 '}';
     }
 }

@@ -31,7 +31,7 @@ public class SignUpActivity extends AppCompatActivity {
     TextView button_signin, button_signup;
     ProgressDialog loading;
     ImageView ImgShowHidePassword, button_back;
-    String id_user="id_";
+//    String id_user="id_";
 
     Context mContext;
     BaseApiService mApiService;
@@ -137,8 +137,7 @@ public class SignUpActivity extends AppCompatActivity {
                 SignUpRequest user = new SignUpRequest(
                     etUsername.getText().toString().trim(),
                     etEmail.getText().toString().trim(),
-                    etPassword.getText().toString().trim(),
-                    id_user.trim()
+                    etPassword.getText().toString().trim()
                 );
 
                 if (validateUsername(etUsername) && validateEmail() && validatePassword(etPassword)) {
