@@ -31,11 +31,9 @@ public class SignUpActivity extends AppCompatActivity {
     TextView button_signin, button_signup;
     ProgressDialog loading;
     ImageView ImgShowHidePassword, button_back;
-//    String id_user="id_";
 
     Context mContext;
     BaseApiService mApiService;
-
     private boolean isOpenEye = false;
 
     @Override
@@ -141,7 +139,8 @@ public class SignUpActivity extends AppCompatActivity {
                 );
 
                 if (validateUsername(etUsername) && validateEmail() && validatePassword(etPassword)) {
-                    loading = ProgressDialog.show(mContext, null, "Harap Tunggu...", true, false);
+                    loading = ProgressDialog.show(mContext, null, "Harap Tunggu...",
+                            true, false);
                     signUp(user);
                 }
             }

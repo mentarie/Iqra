@@ -61,26 +61,23 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
     public void onBindViewHolder(final ViewHolder holder, int position) {
         final TesBacaModel model = dataList.get(position);
         //parsing
-//        Integer id = model.getUserId();
         Double percentage = (double) Math.ceil(model.getRekamHasil() * 100);
         if(percentage != 0){
-            holder.rekamHasil.setBackground(ContextCompat.getDrawable(holder.rekamHasil.getContext(), R.drawable.button_bg_rounded_enabled));
+            holder.rekamHasil.setBackground(ContextCompat.getDrawable(holder.rekamHasil.getContext(),
+                    R.drawable.button_bg_rounded_enabled));
         }
-//        holder.Id=model.getId();
         holder.number.setText(model.getNumber());
         holder.numberColor.setBackgroundResource(model.getNumberColor());
         holder.imageSource.setImageResource(model.getImageSource());
         holder.rekamHasil.setText(String.format("%.0f%%",percentage));
         holder.rekamLine.setBackgroundResource(model.getRekamLine());
         holder.rekamIcon.setBackgroundResource(model.getRekamIcon());
-//        holder.bacaanId=model.getBacaanId();
-//        holder.userId=model.getUserId();
 
         if (holder.rekamHasil.getText() == ""){
 
         }
 
-        //set onclick rekam
+        //setholder
         holder.rekamLine.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -104,11 +101,12 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
 
     class ViewHolder  extends RecyclerView.ViewHolder  {
         LinearLayout numberColor, rekamLine;
-        ImageView imageSource, rekamIcon;
+        ImageView imageSource, rekamIcon, illustrasi;
         TextView number, rekamHasil;
 
         public ViewHolder(View itemView) {
             super(itemView);
+            illustrasi = itemView.findViewById(R.id.illustrasi);
             numberColor = itemView.findViewById(R.id.numberColor);
             number = itemView.findViewById(R.id.number);
             imageSource = itemView.findViewById(R.id.imageSource);
@@ -139,7 +137,7 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
             mediaRecorder.start();
         } catch (IOException e) {
             e.printStackTrace();
-            Log.d("Mentarie", "recordAudio: " + e.getMessage());
+            Log.d("Message", "recordAudio: " + e.getMessage());
         }
 
         //stop record
@@ -150,7 +148,7 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
                     mediaRecorder.stop();
                     mediaRecorder.reset();
                 }catch (Exception e){
-                    Log.d("Mentarie", "onClick: stop" + e.getMessage());
+                    Log.d("Message", "onClick: stop" + e.getMessage());
                 }
                 line.setBackgroundResource(R.drawable.button_bg_circle_disabled_line);
                 icon.setBackgroundResource(R.drawable.ic_baseline_mic_disabled);
@@ -166,6 +164,4 @@ public class TesBacaAdapter extends RecyclerView.Adapter<TesBacaAdapter.ViewHold
         this.dataList = itemList;
         notifyDataSetChanged();
     }
-
-
 }

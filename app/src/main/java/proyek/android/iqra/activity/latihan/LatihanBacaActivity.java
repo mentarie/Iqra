@@ -28,7 +28,9 @@ import proyek.android.iqra.activity.ProfileActivity;
 public class LatihanBacaActivity extends AppCompatActivity {
     TextView textJudul;
     ImageView button_back;
-    LinearLayout k_j1_h1, baca_j1_h1_3, baca_j1_h1_4, baca_j1_h1_5, baca_j1_h1_6, baca_j1_h1_7, baca_j1_h1_8, baca_j1_h1_9, baca_j1_h1_10, baca_j1_h1_11, baca_j1_h1_12, baca_j1_h1_13_a, baca_j1_h1_13_b, baca_j1_h1_13_c;
+    LinearLayout k_j1_h1, baca_j1_h1_3, baca_j1_h1_4, baca_j1_h1_5, baca_j1_h1_6, baca_j1_h1_7,
+            baca_j1_h1_8, baca_j1_h1_9, baca_j1_h1_10, baca_j1_h1_11, baca_j1_h1_12, baca_j1_h1_13_a,
+            baca_j1_h1_13_b, baca_j1_h1_13_c;
     ImageView baca_j1_h1_1, baca_j1_h1_2, button_next;
     public MediaPlayer mp;
     final Handler handler_interact=new Handler();

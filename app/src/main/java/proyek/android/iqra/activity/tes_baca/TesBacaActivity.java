@@ -109,7 +109,8 @@ public class TesBacaActivity extends AppCompatActivity {
         mApiService = UtilsApi.getAPIService();
 
         //permission
-        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)!=PackageManager.PERMISSION_GRANTED){
+        if(ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.RECORD_AUDIO)!=PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, new String[]{
                     Manifest.permission.RECORD_AUDIO,
                     Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -286,14 +287,6 @@ public class TesBacaActivity extends AppCompatActivity {
         item_recycleview_tesbaca.setAdapter(adapter);
     }
 
-    private boolean checkPermissionFromDevice() {
-        int write_external_storage_result = ContextCompat.checkSelfPermission(
-                this,Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        int record_audio_result = ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO);
-        return write_external_storage_result == PackageManager.PERMISSION_GRANTED &&
-                record_audio_result == PackageManager.PERMISSION_GRANTED;
-    }
-
     public void onBackPressed(){
         startActivity(new Intent(getApplicationContext(), Pengantar1Activity.class));
         finish();
@@ -381,7 +374,8 @@ public class TesBacaActivity extends AppCompatActivity {
     private void showPopupWindowHasilAkurasi(final View view, final Double nilaiPopUpAkurasi) {
         LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(
                 view.getContext().LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.activity_pop_up_hasil_rekaman, (ViewGroup) getWindow().getDecorView().findViewById(R.id.content));
+        View popupView = inflater.inflate(R.layout.activity_pop_up_hasil_rekaman,
+                (ViewGroup) getWindow().getDecorView().findViewById(R.id.content));
 
         DecimalFormat formatter = new DecimalFormat("0.00");
         Double percentage = (nilaiPopUpAkurasi * 100);
@@ -397,6 +391,15 @@ public class TesBacaActivity extends AppCompatActivity {
         TextView hasil_test = popupView.findViewById(R.id.hasil_test);
         hasil_test.setText(formatter.format(percentage) + "%");
 
+        ImageView illustrasi = popupView.findViewById(R.id.illustrasi);
+        if (nilaiPopUpAkurasi>70 && nilaiPopUpAkurasi<90){
+           illustrasi.setImageDrawable(ContextCompat.getDrawable(illustrasi.getContext(),
+                    R.drawable.illustrasi_score_sedang));
+        } else if (nilaiPopUpAkurasi<90){
+            illustrasi.setImageDrawable(ContextCompat.getDrawable(illustrasi.getContext(),
+                    R.drawable.illustrasi_score_tinggi));
+        }
+
         Button button_lanjutkan = popupView.findViewById(R.id.button_lanjutkan);
         button_lanjutkan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -408,7 +411,8 @@ public class TesBacaActivity extends AppCompatActivity {
     }
 
     private boolean checkPermission(){
-        int permission = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int permission = ActivityCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE);
         return permission == PackageManager.PERMISSION_GRANTED;
     }
 
@@ -416,7 +420,7 @@ public class TesBacaActivity extends AppCompatActivity {
         String[] permissionArray= {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
         };
-        Log.d("Mentarie", "requestPermission: requesting");
+        Log.d("Permission", "requestPermission: requesting");
         ActivityCompat.requestPermissions(
                 this,
                 permissionArray,
@@ -428,7 +432,7 @@ public class TesBacaActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if(requestCode == REQUEST_EXTERNAL_STORAGE && grantResults[0] == PackageManager.PERMISSION_DENIED){
-            Toast.makeText(this, "Kasi izin cok kalo mau pake bego bat dah", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Permission required", Toast.LENGTH_SHORT).show();
         }
     }
 }

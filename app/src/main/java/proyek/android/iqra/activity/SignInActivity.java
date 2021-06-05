@@ -55,7 +55,7 @@ public class SignInActivity extends AppCompatActivity {
         });
 
         mContext = this;
-        mApiService = UtilsApi.getAPIService(); // meng-init yang ada di package apihelper
+        mApiService = UtilsApi.getAPIService();
 
         //Check if UserResponse is Already Logged In
         if(SaveSharedPreference.getLoggedStatus(getApplicationContext())) {
@@ -101,7 +101,8 @@ public class SignInActivity extends AppCompatActivity {
                 );
 
                 if (validate(etUsername) && validate(etPassword)) {
-                    loading = ProgressDialog.show(mContext, null, "Harap Tunggu...", true, false);
+                    loading = ProgressDialog.show(mContext, null, "Harap Tunggu...",
+                            true, false);
                     logIn(user);
                 }
             }
@@ -116,9 +117,8 @@ public class SignInActivity extends AppCompatActivity {
 
     //validate username & password
     private boolean validate(@NotNull EditText editText) {
-        // check the lenght of the enter data in EditText and give error if its empty
         if (editText.getText().toString().trim().length() > 0) {
-            return true; // returns true if field is not empty
+            return true;
         }
         editText.setError("Please Fill This");
         editText.requestFocus();
@@ -142,7 +142,8 @@ public class SignInActivity extends AppCompatActivity {
                     setUsername = response.body().getData().getUsername();
                     setEmail = response.body().getData().getEmail();
                     setId = response.body().getData().getId();
-                    SaveSharedPreference.setLoggedIn(getApplicationContext(), true, setUsername, setEmail, setId, token);
+                    SaveSharedPreference.setLoggedIn(getApplicationContext(),
+                            true, setUsername, setEmail, setId, token);
 
                     PreferencesUtility.saveUsername(setUsername, getApplicationContext());
                     PreferencesUtility.saveEmail(setEmail, getApplicationContext());
@@ -153,7 +154,8 @@ public class SignInActivity extends AppCompatActivity {
                     Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(SignInActivity.this, "Error! Please try again!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignInActivity.this, "Email telah digunakan!",
+                            Toast.LENGTH_SHORT).show();
                     progressDialog.setCancelable(true);
                     startActivity(new Intent(mContext, SignInActivity.class));
                 }
