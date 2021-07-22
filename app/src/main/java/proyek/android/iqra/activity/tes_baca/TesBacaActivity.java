@@ -392,12 +392,15 @@ public class TesBacaActivity extends AppCompatActivity {
         hasil_test.setText(formatter.format(percentage) + "%");
 
         ImageView illustrasi = popupView.findViewById(R.id.illustrasi);
-        if (nilaiPopUpAkurasi>70 && nilaiPopUpAkurasi<90){
+        if (nilaiPopUpAkurasi>0.7 && nilaiPopUpAkurasi<0.9){
            illustrasi.setImageDrawable(ContextCompat.getDrawable(illustrasi.getContext(),
                     R.drawable.illustrasi_score_sedang));
-        } else if (nilaiPopUpAkurasi<90){
+        } else if (nilaiPopUpAkurasi>0.9){
             illustrasi.setImageDrawable(ContextCompat.getDrawable(illustrasi.getContext(),
                     R.drawable.illustrasi_score_tinggi));
+        } else if (nilaiPopUpAkurasi<0.7){
+            illustrasi.setImageDrawable(ContextCompat.getDrawable(illustrasi.getContext(),
+                    R.drawable.illustrasi_score_rendah));
         }
 
         Button button_lanjutkan = popupView.findViewById(R.id.button_lanjutkan);

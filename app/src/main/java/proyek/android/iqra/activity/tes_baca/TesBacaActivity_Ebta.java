@@ -558,6 +558,9 @@ public class TesBacaActivity_Ebta extends AppCompatActivity {
         } else if (nilaiPopUpAkurasi<90){
             illustrasi.setImageDrawable(ContextCompat.getDrawable(illustrasi.getContext(),
                     R.drawable.illustrasi_score_tinggi));
+        } else {
+            illustrasi.setImageDrawable(ContextCompat.getDrawable(illustrasi.getContext(),
+                    R.drawable.illustrasi_score_rendah));
         }
 
         Button button_lanjutkan = popupView.findViewById(R.id.button_lanjutkan);
